@@ -2,7 +2,7 @@
 
 1. transfer reference to function
 
-    Swift transfer **value copy** to function parameter **by default**. But we can use `inout` keyword to pass a reference.
+    Swift pass **value copy** to function parameter **by default**. But we can use `inout` keyword to pass a reference.
 
     example (not working):
     ```swift
