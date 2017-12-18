@@ -1,7 +1,7 @@
 # UIImageView
 
 1. load animation image
-  ```swift
+  ```swift {.line-numbers}
   func animation(animationsImages:[UIImage], repeatCount: Int, duration: TimeInterval, isStand: Bool) {
 
         self.imageView.animationImages = animationsImages
