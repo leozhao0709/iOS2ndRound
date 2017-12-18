@@ -2,16 +2,23 @@
 
 import UIKit
 
-var a = 20
-var b = 30
+@objcMembers
+class Person: NSObject {
+    var name: String?
+    var age: Int = 0
 
-func swap(a: inout Int, b: inout Int) {
-    let m = a
-    a = b
-    b = m
+    init(dict: [String: Any]) {
+        super.init()
+        setValuesForKeys(dict)
+    }
+    
+    override func setValue(_ value: Any?, forUndefinedKey key: String) {
+        
+    }
 }
 
-swap(a: &a, b: &b)
+let dict:[String: Any] = ["name" : "why", "age" : 18, "height": "188cm"]
+let p = Person(dict: dict)
+print(p.age)
+print(p.name!)
 
-print(a)
-print(b)
