@@ -266,6 +266,7 @@
 		D41871C71FE73F0D0061FDAD /* xiaozhao3.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = D41870C91FE73F0C0061FDAD /* xiaozhao3.mp3 */; };
 		D41871C81FE73F0D0061FDAD /* xiaozhao1.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = D41870CA1FE73F0C0061FDAD /* xiaozhao1.mp3 */; };
 		D41871C91FE73F0D0061FDAD /* dazhao.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = D41870CB1FE73F0C0061FDAD /* dazhao.mp3 */; };
+		D450B8FA1FE8DEF000280EB4 /* testView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D450B8F91FE8DEF000280EB4 /* testView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -530,6 +531,7 @@
 		D41870C91FE73F0C0061FDAD /* xiaozhao3.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = xiaozhao3.mp3; sourceTree = "<group>"; };
 		D41870CA1FE73F0C0061FDAD /* xiaozhao1.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = xiaozhao1.mp3; sourceTree = "<group>"; };
 		D41870CB1FE73F0C0061FDAD /* dazhao.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = dazhao.mp3; sourceTree = "<group>"; };
+		D450B8F91FE8DEF000280EB4 /* testView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = testView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -569,6 +571,7 @@
 				D4186FC31FE73F0C0061FDAD /* 拳皇PNG素材 */,
 				D4186FBA1FE73D1C0061FDAD /* LaunchScreen.storyboard */,
 				D4186FBD1FE73D1C0061FDAD /* Info.plist */,
+				D450B8F91FE8DEF000280EB4 /* testView.swift */,
 			);
 			path = "拳皇";
 			sourceTree = "<group>";
@@ -1242,6 +1245,7 @@
 			files = (
 				D4186FB41FE73D1C0061FDAD /* ViewController.swift in Sources */,
 				D4186FB21FE73D1C0061FDAD /* AppDelegate.swift in Sources */,
+				D450B8FA1FE8DEF000280EB4 /* testView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
