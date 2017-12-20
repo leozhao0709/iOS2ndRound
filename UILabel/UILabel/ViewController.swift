@@ -44,7 +44,6 @@ class ViewController: UIViewController {
         label.lineBreakMode = .byWordWrapping
         
         self.view.addSubview(label)
-        
     }
 
     override func didReceiveMemoryWarning() {

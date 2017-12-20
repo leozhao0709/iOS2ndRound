@@ -7,27 +7,27 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		D45B62E81FE8707F002D5FE7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D45B62E71FE8707F002D5FE7 /* AppDelegate.swift */; };
-		D45B62EA1FE8707F002D5FE7 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D45B62E91FE8707F002D5FE7 /* ViewController.swift */; };
-		D45B62ED1FE8707F002D5FE7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D45B62EB1FE8707F002D5FE7 /* Main.storyboard */; };
-		D45B62EF1FE8707F002D5FE7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D45B62EE1FE8707F002D5FE7 /* Assets.xcassets */; };
-		D45B62F21FE8707F002D5FE7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D45B62F01FE8707F002D5FE7 /* LaunchScreen.storyboard */; };
-		D45B62FA1FE99ACA002D5FE7 /* TestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D45B62F91FE99ACA002D5FE7 /* TestView.swift */; };
+		D418EB121FE9D9BE00378104 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D418EB111FE9D9BE00378104 /* AppDelegate.swift */; };
+		D418EB141FE9D9BE00378104 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D418EB131FE9D9BE00378104 /* ViewController.swift */; };
+		D418EB171FE9D9BE00378104 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D418EB151FE9D9BE00378104 /* Main.storyboard */; };
+		D418EB191FE9D9BE00378104 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D418EB181FE9D9BE00378104 /* Assets.xcassets */; };
+		D418EB1C1FE9D9BE00378104 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D418EB1A1FE9D9BE00378104 /* LaunchScreen.storyboard */; };
+		D418EB241FE9D9E400378104 /* CustomButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = D418EB231FE9D9E400378104 /* CustomButton.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		D45B62E41FE8707F002D5FE7 /* UILabel.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = UILabel.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		D45B62E71FE8707F002D5FE7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		D45B62E91FE8707F002D5FE7 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		D45B62EC1FE8707F002D5FE7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		D45B62EE1FE8707F002D5FE7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		D45B62F11FE8707F002D5FE7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		D45B62F31FE8707F002D5FE7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		D45B62F91FE99ACA002D5FE7 /* TestView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestView.swift; sourceTree = "<group>"; };
+		D418EB0E1FE9D9BE00378104 /* 自定义UIButton.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "自定义UIButton.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		D418EB111FE9D9BE00378104 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		D418EB131FE9D9BE00378104 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		D418EB161FE9D9BE00378104 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		D418EB181FE9D9BE00378104 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		D418EB1B1FE9D9BE00378104 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		D418EB1D1FE9D9BE00378104 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D418EB231FE9D9E400378104 /* CustomButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomButton.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		D45B62E11FE8707F002D5FE7 /* Frameworks */ = {
+		D418EB0B1FE9D9BE00378104 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -37,73 +37,73 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		D45B62DB1FE8707F002D5FE7 = {
+		D418EB051FE9D9BE00378104 = {
 			isa = PBXGroup;
 			children = (
-				D45B62E61FE8707F002D5FE7 /* UILabel */,
-				D45B62E51FE8707F002D5FE7 /* Products */,
+				D418EB101FE9D9BE00378104 /* 自定义UIButton */,
+				D418EB0F1FE9D9BE00378104 /* Products */,
 			);
 			sourceTree = "<group>";
 		};
-		D45B62E51FE8707F002D5FE7 /* Products */ = {
+		D418EB0F1FE9D9BE00378104 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				D45B62E41FE8707F002D5FE7 /* UILabel.app */,
+				D418EB0E1FE9D9BE00378104 /* 自定义UIButton.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		D45B62E61FE8707F002D5FE7 /* UILabel */ = {
+		D418EB101FE9D9BE00378104 /* 自定义UIButton */ = {
 			isa = PBXGroup;
 			children = (
-				D45B62E71FE8707F002D5FE7 /* AppDelegate.swift */,
-				D45B62E91FE8707F002D5FE7 /* ViewController.swift */,
-				D45B62F91FE99ACA002D5FE7 /* TestView.swift */,
-				D45B62EB1FE8707F002D5FE7 /* Main.storyboard */,
-				D45B62EE1FE8707F002D5FE7 /* Assets.xcassets */,
-				D45B62F01FE8707F002D5FE7 /* LaunchScreen.storyboard */,
-				D45B62F31FE8707F002D5FE7 /* Info.plist */,
+				D418EB111FE9D9BE00378104 /* AppDelegate.swift */,
+				D418EB131FE9D9BE00378104 /* ViewController.swift */,
+				D418EB231FE9D9E400378104 /* CustomButton.swift */,
+				D418EB151FE9D9BE00378104 /* Main.storyboard */,
+				D418EB181FE9D9BE00378104 /* Assets.xcassets */,
+				D418EB1A1FE9D9BE00378104 /* LaunchScreen.storyboard */,
+				D418EB1D1FE9D9BE00378104 /* Info.plist */,
 			);
-			path = UILabel;
+			path = "自定义UIButton";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		D45B62E31FE8707F002D5FE7 /* UILabel */ = {
+		D418EB0D1FE9D9BE00378104 /* 自定义UIButton */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = D45B62F61FE8707F002D5FE7 /* Build configuration list for PBXNativeTarget "UILabel" */;
+			buildConfigurationList = D418EB201FE9D9BE00378104 /* Build configuration list for PBXNativeTarget "自定义UIButton" */;
 			buildPhases = (
-				D45B62E01FE8707F002D5FE7 /* Sources */,
-				D45B62E11FE8707F002D5FE7 /* Frameworks */,
-				D45B62E21FE8707F002D5FE7 /* Resources */,
+				D418EB0A1FE9D9BE00378104 /* Sources */,
+				D418EB0B1FE9D9BE00378104 /* Frameworks */,
+				D418EB0C1FE9D9BE00378104 /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
-			name = UILabel;
-			productName = UILabel;
-			productReference = D45B62E41FE8707F002D5FE7 /* UILabel.app */;
+			name = "自定义UIButton";
+			productName = "自定义UIButton";
+			productReference = D418EB0E1FE9D9BE00378104 /* 自定义UIButton.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-		D45B62DC1FE8707F002D5FE7 /* Project object */ = {
+		D418EB061FE9D9BE00378104 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 0910;
-				LastUpgradeCheck = 0910;
+				LastSwiftUpdateCheck = 0920;
+				LastUpgradeCheck = 0920;
 				ORGANIZATIONNAME = "Lei Zhao";
 				TargetAttributes = {
-					D45B62E31FE8707F002D5FE7 = {
-						CreatedOnToolsVersion = 9.1;
+					D418EB0D1FE9D9BE00378104 = {
+						CreatedOnToolsVersion = 9.2;
 						ProvisioningStyle = Automatic;
 					};
 				};
 			};
-			buildConfigurationList = D45B62DF1FE8707F002D5FE7 /* Build configuration list for PBXProject "UILabel" */;
+			buildConfigurationList = D418EB091FE9D9BE00378104 /* Build configuration list for PBXProject "自定义UIButton" */;
 			compatibilityVersion = "Xcode 8.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -111,55 +111,55 @@
 				en,
 				Base,
 			);
-			mainGroup = D45B62DB1FE8707F002D5FE7;
-			productRefGroup = D45B62E51FE8707F002D5FE7 /* Products */;
+			mainGroup = D418EB051FE9D9BE00378104;
+			productRefGroup = D418EB0F1FE9D9BE00378104 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				D45B62E31FE8707F002D5FE7 /* UILabel */,
+				D418EB0D1FE9D9BE00378104 /* 自定义UIButton */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		D45B62E21FE8707F002D5FE7 /* Resources */ = {
+		D418EB0C1FE9D9BE00378104 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D45B62F21FE8707F002D5FE7 /* LaunchScreen.storyboard in Resources */,
-				D45B62EF1FE8707F002D5FE7 /* Assets.xcassets in Resources */,
-				D45B62ED1FE8707F002D5FE7 /* Main.storyboard in Resources */,
+				D418EB1C1FE9D9BE00378104 /* LaunchScreen.storyboard in Resources */,
+				D418EB191FE9D9BE00378104 /* Assets.xcassets in Resources */,
+				D418EB171FE9D9BE00378104 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		D45B62E01FE8707F002D5FE7 /* Sources */ = {
+		D418EB0A1FE9D9BE00378104 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D45B62FA1FE99ACA002D5FE7 /* TestView.swift in Sources */,
-				D45B62EA1FE8707F002D5FE7 /* ViewController.swift in Sources */,
-				D45B62E81FE8707F002D5FE7 /* AppDelegate.swift in Sources */,
+				D418EB141FE9D9BE00378104 /* ViewController.swift in Sources */,
+				D418EB121FE9D9BE00378104 /* AppDelegate.swift in Sources */,
+				D418EB241FE9D9E400378104 /* CustomButton.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		D45B62EB1FE8707F002D5FE7 /* Main.storyboard */ = {
+		D418EB151FE9D9BE00378104 /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				D45B62EC1FE8707F002D5FE7 /* Base */,
+				D418EB161FE9D9BE00378104 /* Base */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
 		};
-		D45B62F01FE8707F002D5FE7 /* LaunchScreen.storyboard */ = {
+		D418EB1A1FE9D9BE00378104 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				D45B62F11FE8707F002D5FE7 /* Base */,
+				D418EB1B1FE9D9BE00378104 /* Base */,
 			);
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
@@ -167,7 +167,7 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
-		D45B62F41FE8707F002D5FE7 /* Debug */ = {
+		D418EB1E1FE9D9BE00378104 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -215,7 +215,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -224,7 +224,7 @@
 			};
 			name = Debug;
 		};
-		D45B62F51FE8707F002D5FE7 /* Release */ = {
+		D418EB1F1FE9D9BE00378104 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -266,7 +266,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
@@ -274,30 +274,30 @@
 			};
 			name = Release;
 		};
-		D45B62F71FE8707F002D5FE7 /* Debug */ = {
+		D418EB211FE9D9BE00378104 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 4YTZ695U3E;
-				INFOPLIST_FILE = UILabel/Info.plist;
+				INFOPLIST_FILE = "自定义UIButton/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.shutterfly.UILabel;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.shutterfly.---UIButton";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
-		D45B62F81FE8707F002D5FE7 /* Release */ = {
+		D418EB221FE9D9BE00378104 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 4YTZ695U3E;
-				INFOPLIST_FILE = UILabel/Info.plist;
+				INFOPLIST_FILE = "自定义UIButton/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.shutterfly.UILabel;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.shutterfly.---UIButton";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -307,25 +307,25 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		D45B62DF1FE8707F002D5FE7 /* Build configuration list for PBXProject "UILabel" */ = {
+		D418EB091FE9D9BE00378104 /* Build configuration list for PBXProject "自定义UIButton" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				D45B62F41FE8707F002D5FE7 /* Debug */,
-				D45B62F51FE8707F002D5FE7 /* Release */,
+				D418EB1E1FE9D9BE00378104 /* Debug */,
+				D418EB1F1FE9D9BE00378104 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		D45B62F61FE8707F002D5FE7 /* Build configuration list for PBXNativeTarget "UILabel" */ = {
+		D418EB201FE9D9BE00378104 /* Build configuration list for PBXNativeTarget "自定义UIButton" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				D45B62F71FE8707F002D5FE7 /* Debug */,
-				D45B62F81FE8707F002D5FE7 /* Release */,
+				D418EB211FE9D9BE00378104 /* Debug */,
+				D418EB221FE9D9BE00378104 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
-	rootObject = D45B62DC1FE8707F002D5FE7 /* Project object */;
+	rootObject = D418EB061FE9D9BE00378104 /* Project object */;
 }
