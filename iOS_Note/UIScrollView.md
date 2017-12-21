@@ -42,3 +42,37 @@ The offset X is always calculated by the **scroll view frame X - content frame X
 Content inset is the content padding. It will add extra space for content. But for the calculating **offset**, it **didn't change**. The offset X is still calculated by the **scroll view frame X - content frame X**. Same as offset Y.
 
 **We always use this value when you want to have a negative offset**. If you don't set this value, but you have a negative offset, then when user scroll the scroll view, the offset will immediately jump back to 0. While if you set this value, the offset will not jump back to 0.
+
+## 5. delegate
+
+Here just shows some common delegate for UIscrollView
+
+```swift
+func scrollViewDidScroll(_ scrollView: UIScrollView) {
+//        NSLog("scroll view did scroll")
+}
+
+func scrollViewWillBeginDragging(_ scrollView: UIScrollView) {
+      NSLog("scroll view will begin dragging")
+}
+
+func scrollViewWillEndDragging(_ scrollView: UIScrollView, withVelocity velocity: CGPoint, targetContentOffset: UnsafeMutablePointer<CGPoint>) {
+      NSLog("scroll view will end dragging")
+}
+
+func scrollViewDidEndDragging(_ scrollView: UIScrollView, willDecelerate decelerate: Bool) {
+      if !decelerate {
+      NSLog("User stop scroll and scroll view stop scroll")
+      } else {
+      NSLog("User stop scroll, but scroll view is still scrolling")
+      }
+}
+
+func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
+      NSLog("scroll view did end decelerating, scroll view stop scroll")
+}
+```
+
+Note:
+
+* If we want to detect the scroll view stop scroll, we need to implement it in both `scrollViewDidEndDragging` and `scrollViewDidEndDecelerating`.

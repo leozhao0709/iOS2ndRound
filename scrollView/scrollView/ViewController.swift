@@ -40,7 +40,12 @@ class ViewController: UIViewController, UIScrollViewDelegate {
     }
     
     func scrollViewDidEndDragging(_ scrollView: UIScrollView, willDecelerate decelerate: Bool) {
-        NSLog("scroll view did end dragging")
+        
+        if !decelerate {
+            NSLog("User stop scroll and scroll view stop scroll")
+        } else {
+            NSLog("User stop scroll, but scroll view is still scrolling")
+        }
     }
     
     func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
