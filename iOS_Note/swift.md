@@ -70,3 +70,25 @@ If we want use `self` in a closure, in order to avoid circular reference, we sho
     self!.view.backgroundColor = UIColor.redColor()
     }
 ```
+
+## 4. guard
+
+```swift
+var age = 18
+
+func online(age : Int) -> Void {
+    guard age >= 18 else {
+        print("回家去")
+        return
+    }
+
+    guard age > 20 else {
+        print("smaller than 20")
+        return
+    }
+
+    print("可以上网")
+}
+
+online(age)
+```
