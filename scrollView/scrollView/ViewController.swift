@@ -9,6 +9,7 @@
 import UIKit
 
 class ViewController: UIViewController, UIScrollViewDelegate {
+    weak var imageView: UIImageView?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -18,13 +19,21 @@ class ViewController: UIViewController, UIScrollViewDelegate {
         self.view.addSubview(scrollView)
         
         let imageView = UIImageView(image: #imageLiteral(resourceName: "1"))
+        self.imageView = imageView
         scrollView.addSubview(imageView)
 
         scrollView.contentSize = CGSize(width: imageView.frame.width, height: imageView.frame.height)
-        scrollView.contentOffset = CGPoint(x: -50, y: 50)
-        scrollView.contentInset = UIEdgeInsets(top: 0, left: 50, bottom: 0, right: 0)
+//        scrollView.contentOffset = CGPoint(x: -50, y: 50)
+//        scrollView.contentInset = UIEdgeInsets(top: 0, left: 50, bottom: 0, right: 0)
         
         scrollView.delegate = self
+        
+        scrollView.minimumZoomScale = 0.5
+        scrollView.maximumZoomScale = 2.0
+    }
+    
+    func viewForZooming(in scrollView: UIScrollView) -> UIView? {
+        return self.imageView
     }
     
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
@@ -38,6 +47,7 @@ class ViewController: UIViewController, UIScrollViewDelegate {
     func scrollViewWillEndDragging(_ scrollView: UIScrollView, withVelocity velocity: CGPoint, targetContentOffset: UnsafeMutablePointer<CGPoint>) {
         NSLog("scroll view will end dragging")
     }
+    
     
     func scrollViewDidEndDragging(_ scrollView: UIScrollView, willDecelerate decelerate: Bool) {
         

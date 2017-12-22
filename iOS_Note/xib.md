@@ -14,7 +14,7 @@ Note:
 
 * If you are **not** using **autolayout**, then it's better to do **not** change its **frame width and frame height**.
 
-* don't use `init(frame: CGRect)` to initial xib file. It won't work. We can create a static method to create xib.
+* don't use `init(frame: CGRect)` to initial xib file. It won't work. We can create a static method to return xib.
 
 ## 2. change the xib initial status (awakeFromNib)
 
