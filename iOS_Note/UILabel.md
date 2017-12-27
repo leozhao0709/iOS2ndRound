@@ -1,6 +1,6 @@
 # UILabel
 
-UIlabel only has a small part of properties.
+## 1. UIlabel only has a small part of properties.
 
 example:
 
@@ -40,3 +40,21 @@ Note:
 
 * `lineBreakMode` always works together with `numberOfLines`. For example, `byWordWrapping` and `byCharWrapping` should always work with `numberOfLines=0`. byWrapping, of course, need an automatically line change, then we can see it.
 * `byTruncating...` should always work with `numberOfLines!=0`, only when it does not change line automatically, then we can see a trucate.
+
+## 2. get width according to text font size (for one line)
+
+```swift
+let myString: String = "Some text is just here..."
+let textArr = [NSAttributedStringKey.font: UIFont.systemFont(ofSize: 14)]
+let width = myString.size(withAttributes: textArr).width
+```
+
+## 3. get height according text (for multiple line)
+
+```swift
+let myString: String = "Some text is just here..."
+let textArr = [NSAttributedStringKey.font: UIFont.systemFont(ofSize: 14)]
+// Max Float means no limitation for height
+let textMaxSize = CGSize(width: maxMath, height: MAXFLOAT)
+let textH = myString.boundingRect(textMaxSize, options: NSStringDrawingOptions.usesLineFragmentOrigin, attributes: textArr, context: nil).height
+```

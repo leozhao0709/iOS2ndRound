@@ -11,11 +11,4 @@ import UIKit
 class Car: NSObject {
     var icon: String?
     var name: String?
-    
-//    init(dict: [String: Any]) {
-//        super.init()
-//        self.setValuesForKeys(dict)
-//        self.icon = dict["icon"] as? String
-//        self.name = dict["name"] as? String
-//    }
 }

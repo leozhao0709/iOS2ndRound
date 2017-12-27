@@ -39,7 +39,7 @@ class ViewController: UIViewController, UITableViewDataSource {
         // Do any additional setup after loading the view, typically from a nib.
         self.tableView.dataSource = self
         self.tableView.register(TableViewCell.self, forCellReuseIdentifier: carCellIdentifier)
-//        self.tableView.register( UINib(nibName: NSStringFromClass(TableViewCell.self), bundle: nil), forCellReuseIdentifier: carCellIdentifier)
+
         self.tableView.sectionIndexColor = UIColor.cyan
         self.tableView.sectionIndexBackgroundColor = UIColor.orange
     }
@@ -82,6 +82,7 @@ class ViewController: UIViewController, UITableViewDataSource {
         
         return titles
     }
+    
 
 }
 

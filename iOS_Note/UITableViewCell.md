@@ -17,5 +17,5 @@ Note: `override init(frame: CGRect)` **won't** work for cell creation.
 ## 4. If we want to use xib, then we need to regist xib cell
 
 ```swift
-self.tableView.register( UINib(nibName: NSStringFromClass(TableViewCell.self), bundle: nil), forCellReuseIdentifier: carCellIdentifier)
+self.tableView.register(UINib(nibName: NSStringFromClass(TableViewCell.self), bundle: nil), forCellReuseIdentifier: carCellIdentifier)
 ```
