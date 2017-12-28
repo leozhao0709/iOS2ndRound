@@ -60,3 +60,73 @@ If we are trying to create an unequal height cell, note the order that system wi
 `cellForRowAt` > `heightForRowAt` > cell `layoutSubviews`
 
 And when we create unequal cell, it need to contains the cell height calculate in **model**
+
+## 5. reload/insert/remove data
+
+* reload all data:
+
+```swift
+self.tableView.reloadData()
+```
+
+* reload some row or section. **Note**: This method only works for rows didn't change
+
+```swift
+let indexPathArray = [IndexPath(row: 0, section: 0)]
+self.tableView.reloadRows(at: indexPathArray, with: .fade)
+```
+
+* insert one/some row(s):
+
+```swift
+let indexPathArray = [IndexPath(row: 0, section: 0)]
+self.tableView.insertRows(at: indexPathArray, with: .fade)
+```
+
+* * remove one/some row(s):
+
+```swift
+let indexPathArray = [IndexPath(row: 0, section: 0)]
+self.tableView.deleteRows(at: indexPathArray, with: .fade)
+```
+
+## 6. 左滑删除
+
+For this, we only need to implement this delegate:
+
+```swift
+// 左滑删除
+func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
+    self.carGroups[indexPath.section].cars?.remove(at: indexPath.row)
+    tableView.deleteRows(at: [indexPath], with: .top)
+}
+
+// change左滑删除title
+func tableView(_ tableView: UITableView, titleForDeleteConfirmationButtonForRowAt indexPath: IndexPath) -> String? {
+    return "删除"
+}
+```
+
+## 7. 自定义左滑多个按钮
+
+We should implement delegate: `func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]?`
+
+Note:
+
+* this one will make the 左滑删除 失效
+* `tableView.isEditing = false` will 复原cell到原位置
+
+```swift
+func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
+let delete = UITableViewRowAction(style: .destructive, title: "删除") { (action, indexPath) in
+    self.carGroups[indexPath.section].cars?.remove(at: indexPath.row)
+    tableView.deleteRows(at: [indexPath], with: .top)
+}
+
+let guanzhu = UITableViewRowAction(style: .normal, title: "关注") { (action, indexPath) in
+    tableView.isEditing = false
+}
+// guanzhu.backgroundColor = UIColor.gray
+return [delete, guanzhu]
+}
+```

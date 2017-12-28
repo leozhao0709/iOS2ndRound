@@ -11,25 +11,10 @@ import MJExtension
 
 let carCellIdentifier = "CarCell"
 
-class ViewController: UIViewController, UITableViewDataSource {
+class ViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
 
     @IBOutlet weak var tableView: UITableView!
     lazy var carGroups:[CarsGroup] = {
-//        let path = Bundle.main.path(forResource: "cars", ofType: "plist")
-//        let carsArray = NSArray(contentsOfFile: path!)
-//
-//        var tempArray:[CarsGroup] = []
-//        for cars in carsArray! {
-//            let carGroup = CarsGroup(dict: cars as! [String : AnyObject])
-//            tempArray.append(carGroup)
-//        }
-//
-//        return tempArray
-        
-//        CarsGroup.mj_setupObjectClass(inArray: { () -> [AnyHashable : Any]? in
-//            return ["cars": Car.self]
-//        })
-        
         return CarsGroup.mj_objectArray(withFilename: "cars.plist") as! [CarsGroup]
     }()
     
@@ -38,6 +23,7 @@ class ViewController: UIViewController, UITableViewDataSource {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         self.tableView.dataSource = self
+        self.tableView.delegate = self
         self.tableView.register(TableViewCell.self, forCellReuseIdentifier: carCellIdentifier)
 
         self.tableView.sectionIndexColor = UIColor.cyan
@@ -59,10 +45,6 @@ class ViewController: UIViewController, UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: carCellIdentifier)
         
-//        if cell == nil {
-//            cell = UITableViewCell(style: .default, reuseIdentifier: carCellIdentifier)
-//        }
-        
         let car = self.carGroups[indexPath.section].cars![indexPath.row]
         cell?.textLabel?.text = car.name
         cell?.imageView?.image = UIImage(named: car.icon!)
@@ -83,6 +65,30 @@ class ViewController: UIViewController, UITableViewDataSource {
         return titles
     }
     
-
+    // 左滑删除
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
+        self.carGroups[indexPath.section].cars?.remove(at: indexPath.row)
+        tableView.deleteRows(at: [indexPath], with: .top)
+    }
+//
+//    // change左滑删除title
+//    func tableView(_ tableView: UITableView, titleForDeleteConfirmationButtonForRowAt indexPath: IndexPath) -> String? {
+//        return "删除"
+//    }
+    
+    
+    func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
+        let delete = UITableViewRowAction(style: .destructive, title: "删除") { (action, indexPath) in
+            self.carGroups[indexPath.section].cars?.remove(at: indexPath.row)
+            tableView.deleteRows(at: [indexPath], with: .top)
+        }
+        
+        let guanzhu = UITableViewRowAction(style: .normal, title: "关注") { (action, indexPath) in
+            tableView.isEditing = false
+        }
+//        guanzhu.backgroundColor = UIColor.gray
+        return [delete, guanzhu]
+    }
+    
 }
 
