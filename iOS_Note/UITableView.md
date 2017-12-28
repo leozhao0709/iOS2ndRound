@@ -52,3 +52,11 @@ func sectionIndexTitles(for tableView: UITableView) -> [String]? {
     return titles
 }
 ```
+
+## 4. some datasource and delegate order
+
+If we are trying to create an unequal height cell, note the order that system will call:
+
+`cellForRowAt` > `heightForRowAt` > cell `layoutSubviews`
+
+And when we create unequal cell, it need to contains the cell height calculate in **model**
