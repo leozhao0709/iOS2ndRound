@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="KGk-i7-Jjw" customClass="MyTableViewCell" customModule="NotificationAndDelegate" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="43.5"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="R3L-FI-ZwE">
+                        <rect key="frame" x="198" y="6" width="46" height="30"/>
+                        <color key="backgroundColor" red="1" green="0.5" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="30" id="HXb-qJ-cqu"/>
+                            <constraint firstAttribute="width" constant="46" id="dV8-kc-NfC"/>
+                        </constraints>
+                        <state key="normal" title="+"/>
+                        <connections>
+                            <action selector="plusBtnClick:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="WjG-86-HQf"/>
+                        </connections>
+                    </button>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3qz-PY-I4I">
+                        <rect key="frame" x="259" y="6" width="46" height="30"/>
+                        <color key="backgroundColor" red="0.59534360620000004" green="1" blue="0.71378578479999999" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="30" id="88G-W1-gne"/>
+                            <constraint firstAttribute="width" constant="46" id="VNs-bb-wc3"/>
+                        </constraints>
+                        <state key="normal" title="-"/>
+                        <connections>
+                            <action selector="minusBtnClick:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="epy-Jc-Lwj"/>
+                        </connections>
+                    </button>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="R3L-FI-ZwE" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="2vo-3k-Pqi"/>
+                    <constraint firstItem="3qz-PY-I4I" firstAttribute="centerY" secondItem="R3L-FI-ZwE" secondAttribute="centerY" id="9yz-VM-PbK"/>
+                    <constraint firstItem="3qz-PY-I4I" firstAttribute="leading" secondItem="R3L-FI-ZwE" secondAttribute="trailing" constant="15" id="G3f-XB-EvN"/>
+                    <constraint firstAttribute="trailing" secondItem="3qz-PY-I4I" secondAttribute="trailing" constant="15" id="GWt-v5-jrp"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <point key="canvasLocation" x="-331" y="60"/>
+        </tableViewCell>
+    </objects>
+</document>
