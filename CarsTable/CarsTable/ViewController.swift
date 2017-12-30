@@ -90,5 +90,9 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         return [delete, guanzhu]
     }
     
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        <#code#>
+    }
+    
 }
 
