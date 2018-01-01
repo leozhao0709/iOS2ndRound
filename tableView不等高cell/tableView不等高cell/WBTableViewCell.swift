@@ -67,12 +67,13 @@ class WBTableViewCell: UITableViewCell {
         self.contentView.addSubview(text_label)
         self.contentView.addSubview(vipImageView)
         self.contentView.addSubview(pictureImageView)
-        
+
         self.iconImageView = iconImageView
         self.nameLabel = nameLabel
         self.text_label = text_label
         self.vipImageView = vipImageView
         self.pictureImageView = pictureImageView
+        
     }
     
 }
