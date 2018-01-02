@@ -87,12 +87,12 @@
 				D420F1681FF45C620014A6F4 /* AppDelegate.swift */,
 				D420F16A1FF45C620014A6F4 /* ViewController.swift */,
 				D420F17A1FF45CEE0014A6F4 /* WBTableViewCell.swift */,
+				D420F17E1FF45E1C0014A6F4 /* Status.swift */,
 				D420F16C1FF45C620014A6F4 /* Main.storyboard */,
 				D420F16F1FF45C620014A6F4 /* Assets.xcassets */,
 				D420F1711FF45C620014A6F4 /* LaunchScreen.storyboard */,
 				D420F17C1FF45D5D0014A6F4 /* statuses.plist */,
 				D420F1741FF45C620014A6F4 /* Info.plist */,
-				D420F17E1FF45E1C0014A6F4 /* Status.swift */,
 			);
 			path = "tableView不等高cell";
 			sourceTree = "<group>";
