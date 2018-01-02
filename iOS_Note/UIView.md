@@ -1,6 +1,17 @@
 # Customize UIView
 
-## 1. setup UI
+## 1. load view
+
+Load view will be used to **create View**, we can create ourselves' view here to reduce memory use as if we rewirte this method, the default view won't be create. (Note: don't call super if we create customerized view)
+
+This load view will be called **before** `viewDidLoad()`.
+
+```swift
+override func loadView() {
+}
+```
+
+## 2. setup UI
 
 When we want to create an custom UI, here's some tips.
 
