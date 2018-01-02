@@ -15,7 +15,7 @@ extension UIImage {
         if let image = image {
             resizeImage = image.stretchableImage(withLeftCapWidth: Int(image.size.width*0.5), topCapHeight: Int(image.size.height*0.5))
         }
-        
+
         return resizeImage
     }
 }

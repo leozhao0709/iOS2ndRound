@@ -22,3 +22,13 @@
 
   self.imageView.image = resizeImage
   ```
+
+## 2. image rendering Mode
+
+Image rendering has 3 different modes: `UIImageRenderingModeAutomatic`, `UIImageRenderingModeAlwaysOriginal` and `UIImageRenderingModeAlwaysTemplate`
+
+```swift
+UIImageRenderingModeAutomatic,          // Use the default rendering mode for the context where the image is used
+UIImageRenderingModeAlwaysOriginal,     // Always draw the original image, without treating it as a template
+UIImageRenderingModeAlwaysTemplate,     // Always draw the image as a template image, ignoring its color information
+```
