@@ -10,7 +10,22 @@ self.view.addSubview(textFiled)
 
 Note: We need to set `borderStyle`. The default value for border style is none. Then you may not see it.
 
-## 2. delegate
+## 2. some properties
+
+If we want to `change the input keyboard` to ourselves view, we can use **inputView** properties.
+
+```swift
+private func setupUI() {
+    let pickerView = UIPickerView()
+    self.inputView = pickerView
+    pickerView.dataSource = self
+    pickerView.delegate = self
+
+    self.pickerView = pickerView
+}
+```
+
+## 3. delegate
 
 ```swift
 func textFieldDidBeginEditing(_ textField: UITextField) {
@@ -33,7 +48,7 @@ func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange
 
 Note:
 
-* this delegate is always using with `touchesBegan` to resignFirstResponder()
+* these delegate is always using with `touchesBegan` to resignFirstResponder()
 
   ```swift
   override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
@@ -45,4 +60,4 @@ Note:
   }
   ```
 
-* `textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool` is used to get the user input. the `string` in this delegate is what user input. The return value is intersting. If return true, then user input can show in textField, but if return false, the user input will not show in text filed. In previous example, only when user input 1, it will show in text filed.
+* `textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool` is used to get the user input. the `string` in this delegate is what user input. The return value is intersting. **If return true, then user input can show in textField, but if return false, the user input will not show in text filed. In previous example, only when user input 1, it will show in text filed.** We can use this delegate to prevent user's input.

@@ -18,6 +18,9 @@
 		D420F1A81FFC03520014A6F4 /* flags.plist in Resources */ = {isa = PBXBuildFile; fileRef = D420F1A71FFC03520014A6F4 /* flags.plist */; };
 		D420F1AA1FFC03F60014A6F4 /* FlagView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D420F1A91FFC03F60014A6F4 /* FlagView.swift */; };
 		D420F1AC1FFC07560014A6F4 /* Flag.swift in Sources */ = {isa = PBXBuildFile; fileRef = D420F1AB1FFC07560014A6F4 /* Flag.swift */; };
+		D4BFDB481FFC40A200BF7AF8 /* BirthTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4BFDB471FFC40A200BF7AF8 /* BirthTextField.swift */; };
+		D4BFDB4A1FFC40C300BF7AF8 /* TextFiledExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4BFDB491FFC40C300BF7AF8 /* TextFiledExtension.swift */; };
+		D4BFDB4D1FFC412A00BF7AF8 /* AreaTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4BFDB4C1FFC412A00BF7AF8 /* AreaTextField.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +39,9 @@
 		D420F1A71FFC03520014A6F4 /* flags.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = flags.plist; sourceTree = "<group>"; };
 		D420F1A91FFC03F60014A6F4 /* FlagView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlagView.swift; sourceTree = "<group>"; };
 		D420F1AB1FFC07560014A6F4 /* Flag.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Flag.swift; sourceTree = "<group>"; };
+		D4BFDB471FFC40A200BF7AF8 /* BirthTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BirthTextField.swift; sourceTree = "<group>"; };
+		D4BFDB491FFC40C300BF7AF8 /* TextFiledExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFiledExtension.swift; sourceTree = "<group>"; };
+		D4BFDB4C1FFC412A00BF7AF8 /* AreaTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AreaTextField.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -88,9 +94,12 @@
 		D420F18D1FFBFFA90014A6F4 /* pickerView */ = {
 			isa = PBXGroup;
 			children = (
+				D4BFDB4B1FFC411D00BF7AF8 /* areaTF */,
+				D4BFDB461FFC409000BF7AF8 /* birthTF */,
 				D420F1A01FFC02700014A6F4 /* flagTF */,
 				D420F18E1FFBFFA90014A6F4 /* AppDelegate.swift */,
 				D420F1901FFBFFA90014A6F4 /* ViewController.swift */,
+				D4BFDB491FFC40C300BF7AF8 /* TextFiledExtension.swift */,
 				D420F1921FFBFFA90014A6F4 /* Main.storyboard */,
 				D420F1951FFBFFA90014A6F4 /* Assets.xcassets */,
 				D420F1971FFBFFA90014A6F4 /* LaunchScreen.storyboard */,
@@ -109,6 +118,22 @@
 				D420F1AB1FFC07560014A6F4 /* Flag.swift */,
 			);
 			path = flagTF;
+			sourceTree = "<group>";
+		};
+		D4BFDB461FFC409000BF7AF8 /* birthTF */ = {
+			isa = PBXGroup;
+			children = (
+				D4BFDB471FFC40A200BF7AF8 /* BirthTextField.swift */,
+			);
+			path = birthTF;
+			sourceTree = "<group>";
+		};
+		D4BFDB4B1FFC411D00BF7AF8 /* areaTF */ = {
+			isa = PBXGroup;
+			children = (
+				D4BFDB4C1FFC412A00BF7AF8 /* AreaTextField.swift */,
+			);
+			path = areaTF;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -236,9 +261,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D4BFDB4D1FFC412A00BF7AF8 /* AreaTextField.swift in Sources */,
 				D420F1911FFBFFA90014A6F4 /* ViewController.swift in Sources */,
 				D420F1A21FFC028A0014A6F4 /* FlagTextField.swift in Sources */,
 				D420F1AC1FFC07560014A6F4 /* Flag.swift in Sources */,
+				D4BFDB481FFC40A200BF7AF8 /* BirthTextField.swift in Sources */,
+				D4BFDB4A1FFC40C300BF7AF8 /* TextFiledExtension.swift in Sources */,
 				D420F1AA1FFC03F60014A6F4 /* FlagView.swift in Sources */,
 				D420F18F1FFBFFA90014A6F4 /* AppDelegate.swift in Sources */,
 			);

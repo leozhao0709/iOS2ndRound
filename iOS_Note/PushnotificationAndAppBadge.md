@@ -35,4 +35,3 @@ UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .badge
 let app = UIApplication.shared
 app.applicationIconBadgeNumber = 10
 ```
-

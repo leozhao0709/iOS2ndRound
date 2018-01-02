@@ -11,7 +11,7 @@ import UIKit
 class ViewController: UIViewController, UITextFieldDelegate {
 
     @IBOutlet weak var countryTF: FlagTextField!
-    @IBOutlet weak var birthTF: UITextField!
+    @IBOutlet weak var birthTF: BirthTextField!
     @IBOutlet weak var areaTF: UITextField!
     
     override func viewDidLoad() {
@@ -20,6 +20,10 @@ class ViewController: UIViewController, UITextFieldDelegate {
         self.countryTF.delegate = self
         self.birthTF.delegate = self
         self.areaTF.delegate = self
+    }
+    
+    func textFieldDidBeginEditing(_ textField: UITextField) {
+        textField.initalText()
     }
     
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
