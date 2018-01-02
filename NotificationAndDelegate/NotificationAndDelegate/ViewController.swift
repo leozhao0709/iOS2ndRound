@@ -13,7 +13,10 @@ let myTableViewCellIdentifier = "MyTableViewCell"
 class ViewController: UIViewController, UITableViewDataSource, MyTableViewCellProtocol {
 
     @IBOutlet weak var tableView: UITableView!
-
+    
+    override func loadView() {
+        super.loadView()
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
