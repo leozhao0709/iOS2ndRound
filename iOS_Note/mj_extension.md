@@ -13,7 +13,7 @@ lazy var carGroups:[CarsGroup] = {
 }()
 ```
 
-## 3. If the nest model is really deep, we can also override function `mj_objectClassInArray` in each model class.
+## 3. If the nest model is really deep, we can also override function `mj_objectClassInArray` in each model class
 
 ```swift
 import MJExtension
