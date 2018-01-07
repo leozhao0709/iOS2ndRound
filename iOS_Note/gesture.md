@@ -53,7 +53,7 @@ private func longPress(longPressGesture: UILongPressGestureRecognizer) {
 
 ## 3. Swipe Gesture
 
-Note: **Each** Swipe Gesture **only has 1 direction**. If we want to add several directions, we need create several swipe gesture.
+Note: **Each** Swipe Gesture **only has 1 direction**. If we want to add several directions, we need create several swipe gesture. But note: if we want to do a swipe user interaction function, it's better to use **Pan Gesture**
 
 ```swift
 @IBOutlet weak var testView: UIView!

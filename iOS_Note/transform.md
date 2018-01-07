@@ -1,5 +1,7 @@
 # Transform properties
 
+Note: All the following example is just add a small change each time to transform. **If we just want to transform once, we can use `CGAffineTransform(translationX: navWidth, y: 0)` instead**.
+
 ## 1. translate
 
 ```swift
