@@ -1,5 +1,7 @@
 # Quartz2D
 
+**Important**: All Quartz2D related thing will only work in `override func draw(_ rect: CGRect)`, so we must create a UIView first to use it.
+
 ## 1. Base draw Line (Base theory using context)
 
 ```swift
@@ -86,3 +88,39 @@ Note:
 ## 5. setNeedsDisplay()
 
 This is an important method. Each time if we want redraw, we should call **self.setNeedsDisplay()** function to **redraw the view**!!!
+
+## 6. Draw Text (Draw String)
+
+We can only use **NSString** to draw in a view
+
+```swift
+override func draw(_ rect: CGRect) {
+    let str: NSString = "Lzhao"
+    let attributes: [NSAttributedStringKey : Any]? = [:]
+//        str.draw(at: CGPoint.zero, withAttributes: attributes)
+    str.draw(in: rect, withAttributes: attributes)
+}
+```
+
+The difference for `drawInPoint` and `drawInRect`: **drawInPoint won't change line and drawInRect will change Line automatically**
+
+## 7. Draw Image
+
+```swift
+override func draw(_ rect: CGRect) {
+    let image = UIImage(named: "阿狸头像")
+//        image?.draw(at: CGPoint.zero)
+//        image?.draw(in: rect)
+
+    UIRectClip(CGRect(x: 0, y: 0, width: 50, height: 50))
+    image?.drawAsPattern(in: rect)
+}
+```
+
+The difference for `drawInPoint`, `drawInrect` and `drawAsPattern`:
+
+- **drawInPonit** will draw using the original image size
+- **drawInrect** will strech or compress the image to rect size
+- **drawAsPattern** will 平铺 image
+
+`UIRectClip` can be used to clip the image we draw. But it must be used before we draw it. (before `drawInPoint`, `drawInrect` or `drawAsPattern`).

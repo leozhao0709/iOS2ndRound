@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="progressBar" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="U7M-yV-DNr" customClass="ProgressView" customModule="progressBar" customModuleProvider="target">
+                                <rect key="frame" x="87" y="80" width="200" height="200"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0.00%" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Cqd-Et-Byc">
+                                        <rect key="frame" x="0.0" y="0.0" width="200" height="200"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstItem="Cqd-Et-Byc" firstAttribute="leading" secondItem="U7M-yV-DNr" secondAttribute="leading" id="DmS-M2-U2c"/>
+                                    <constraint firstAttribute="height" constant="200" id="J78-gD-Y3f"/>
+                                    <constraint firstAttribute="bottom" secondItem="Cqd-Et-Byc" secondAttribute="bottom" id="PWq-gy-unK"/>
+                                    <constraint firstAttribute="width" constant="200" id="U6t-Dj-t1G"/>
+                                    <constraint firstItem="Cqd-Et-Byc" firstAttribute="top" secondItem="U7M-yV-DNr" secondAttribute="top" id="eSo-3e-3EN"/>
+                                    <constraint firstAttribute="trailing" secondItem="Cqd-Et-Byc" secondAttribute="trailing" id="wfG-IS-0aQ"/>
+                                </constraints>
+                            </view>
+                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="Cvl-v4-B7R">
+                                <rect key="frame" x="48" y="340" width="279" height="31"/>
+                                <connections>
+                                    <action selector="slide:" destination="BYZ-38-t0r" eventType="valueChanged" id="DIz-Fg-a7K"/>
+                                </connections>
+                            </slider>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Cvl-v4-B7R" secondAttribute="trailing" constant="50" id="Spy-Au-zuS"/>
+                            <constraint firstItem="Cvl-v4-B7R" firstAttribute="top" secondItem="U7M-yV-DNr" secondAttribute="bottom" constant="60" id="iEu-EG-Mwq"/>
+                            <constraint firstItem="U7M-yV-DNr" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="60" id="jaw-IA-Hrm"/>
+                            <constraint firstItem="Cvl-v4-B7R" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="50" id="sM1-1t-H1s"/>
+                            <constraint firstItem="U7M-yV-DNr" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="ywA-Nx-NqH"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                    <connections>
+                        <outlet property="label" destination="Cqd-Et-Byc" id="j3w-yU-qqR"/>
+                        <outlet property="progressView" destination="U7M-yV-DNr" id="8uh-DI-ihj"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="136.80000000000001" y="133.5832083958021"/>
+        </scene>
+    </scenes>
+</document>
