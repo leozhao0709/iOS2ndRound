@@ -1,7 +1,5 @@
 # Quartz2D
 
-**Important**: All Quartz2D related thing will only work in `override func draw(_ rect: CGRect)`, so we must create a UIView first to use it.
-
 ## 1. Base draw Line (Base theory using context)
 
 ```swift
@@ -124,3 +122,29 @@ The difference for `drawInPoint`, `drawInrect` and `drawAsPattern`:
 - **drawAsPattern** will 平铺 image
 
 `UIRectClip` can be used to clip the image we draw. But it must be used before we draw it. (before `drawInPoint`, `drawInrect` or `drawAsPattern`).
+
+## 8. add waterMark
+
+```swift
+override func viewDidLoad() {
+    super.viewDidLoad()
+
+    let image = UIImage(named: "阿狸头像")
+    // 0.0 scale will use the default device scale
+    UIGraphicsBeginImageContextWithOptions(self.imageView.bounds.size, false, 0.0)
+    image?.draw(at: CGPoint.zero)
+
+    let str: NSString = "waterMark"
+    str.draw(at: CGPoint.zero, withAttributes: nil)
+
+    let getImage = UIGraphicsGetImageFromCurrentImageContext()
+    UIGraphicsEndImageContext()
+    self.imageView.image = getImage
+}
+```
+
+Note:
+
+- We should use `UIGraphicsBeginImageContextWithOptions()` and `UIGraphicsEndImageContext()` to begin and end the context.
+- When we add text, **we must use NSString**.
+- We can only re-draw a new image, not image view.
