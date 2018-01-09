@@ -32,10 +32,11 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
         flowLayout.itemSize = CGSize(width: 100, height: 100)
         flowLayout.sectionInset = UIEdgeInsets(top: 40, left: 10, bottom: 10, right: 10)
         flowLayout.minimumLineSpacing = 20
+        flowLayout.scrollDirection = .horizontal
         
-        let collectionView = UICollectionView(frame: self.view.bounds, collectionViewLayout: flowLayout)
-        collectionView.backgroundColor = UIColor.white
         
+        let collectionView = UICollectionView(frame: CGRect(x: 0, y: 200, width: UIScreen.main.bounds.width, height: 250), collectionViewLayout: flowLayout)
+//        collectionView.backgroundColor = UIColor.white
         
         collectionView.dataSource = self
         collectionView.delegate = self
