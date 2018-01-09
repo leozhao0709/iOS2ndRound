@@ -85,3 +85,99 @@ Note:
 - We should use `override init(frame: CGRect)` to initial collectionViewCell if we want to use code to do it.
 - We can also use xib to create cell. But make sure we are using `collectionView.register(UINib(nibName: String(describing: AppCell.self), bundle: nil), forCellWithReuseIdentifier: cellIdentifier)` to register cell.
 - If we are using xib, please know the cell size will still be decided by `flowLayout.itemSize`.
+
+## 4. customer layout
+
+```swift
+class PhotoFlowLayout: UICollectionViewFlowLayout {
+
+    override func prepare() {
+        super.prepare()
+        self.scrollDirection = .horizontal
+        let collectionViewSize = self.collectionView?.frame.size
+
+        let itemWidth = (collectionViewSize?.height)! * 0.6
+        let itemHeight = (collectionViewSize?.height)! * 0.8
+
+        self.itemSize = CGSize(width: itemWidth, height: itemHeight)
+
+        let margin = (collectionViewSize?.width)!/2 - itemWidth/2
+
+        self.sectionInset = UIEdgeInsetsMake(0, margin, 0, margin)
+    }
+
+    /**
+     - parameter rect: 可见范围的rect
+
+     - returns: [UICollectionViewLayoutAttributes]: 可见范围cell的属性, 该属性是相对于整个content的属性, 所以x, y是相对于整个content size的
+     */
+    override func layoutAttributesForElements(in rect: CGRect) -> [UICollectionViewLayoutAttributes]? {
+
+        let superAttributes = super.layoutAttributesForElements(in: rect)
+
+        //计算出屏幕的中心点， 中心点必须加上collectionView的偏移量.x
+        let screenCenter = (self.collectionView?.contentOffset.x)! + (self.collectionView?.frame.size.width)!/2
+
+        var attributesCopyArray:[UICollectionViewLayoutAttributes] = []
+        for itemAttributes in superAttributes! {
+            let deltaMargin = abs(screenCenter - itemAttributes.center.x)
+
+            let scaleDelta = 1.1 - deltaMargin / ((self.collectionView?.frame.size.width)!/2 + itemAttributes.size.width)
+
+            let itemAttributesCopy = itemAttributes.copy() as! UICollectionViewLayoutAttributes
+            itemAttributesCopy.transform = CGAffineTransform(scaleX: scaleDelta, y: scaleDelta)
+            attributesCopyArray.append(itemAttributesCopy)
+        }
+
+        return attributesCopyArray
+    }
+
+    //当content变化时, 是否重绘可见范围
+    override func shouldInvalidateLayout(forBoundsChange newBounds: CGRect) -> Bool {
+        return true
+    }
+
+    /**
+     - parameter proposedContentOffset: 本应该停留/原本停留的位置, 相对于整个content
+     - parameter velocity:              力度，速度
+
+     - returns: targetContentOffset: 最终停留的位置(进行干预后停留的位置), 相对于整个content
+     */
+    override func targetContentOffset(forProposedContentOffset proposedContentOffset: CGPoint, withScrollingVelocity velocity: CGPoint) -> CGPoint {
+
+        //1.取出屏幕的中心点
+        let screenCenter = proposedContentOffset.x + (self.collectionView?.frame.width)!/2
+
+        //2. 取出可见范围内的cell
+        var visibleRect = CGRect.zero
+        visibleRect.size = (self.collectionView?.frame.size)!
+        visibleRect.origin = proposedContentOffset
+
+        //用super避免重复调用计算比率
+        let visibleArray = super.layoutAttributesForElements(in: visibleRect)
+
+        var minMargin = CGFloat.greatestFiniteMagnitude
+        for attributes in visibleArray! {
+            let deltaMargin = (attributes.center.x - screenCenter)
+
+            if abs(minMargin) > abs(deltaMargin) {
+                minMargin = deltaMargin
+            }
+        }
+
+        return CGPoint(x: proposedContentOffset.x + minMargin, y: proposedContentOffset.y)
+    }
+
+    override func layoutAttributesForItem(at indexPath: IndexPath) -> UICollectionViewLayoutAttributes? {
+        <#code#>
+    }
+}
+```
+
+Note:
+
+- We should do all UI size related thing in `override func prepare()` function.
+- `override func layoutAttributesForElements(in rect: CGRect) -> [UICollectionViewLayoutAttributes]?` this one only return the **visibale rect** item attributes.
+- `override func shouldInvalidateLayout(forBoundsChange newBounds: CGRect) -> Bool` we should always rewrite this function.
+- `override func targetContentOffset(forProposedContentOffset proposedContentOffset: CGPoint, withScrollingVelocity velocity: CGPoint) -> CGPoint` This function will be used if we want to change the default content stay position.
+- `override func layoutAttributesForItem(at indexPath: IndexPath) -> UICollectionViewLayoutAttributes?` we can use this function to rewirte each cell attributes according to indexPath.
