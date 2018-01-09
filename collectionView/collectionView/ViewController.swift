@@ -29,7 +29,7 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
     private func setUpCollectionView() {
         let flowLayout = UICollectionViewFlowLayout()
         
-        flowLayout.itemSize = CGSize(width: 200, height: 200)
+        flowLayout.itemSize = CGSize(width: 100, height: 100)
         flowLayout.sectionInset = UIEdgeInsets(top: 40, left: 10, bottom: 10, right: 10)
         flowLayout.minimumLineSpacing = 20
         
