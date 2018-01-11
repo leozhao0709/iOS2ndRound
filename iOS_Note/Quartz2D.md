@@ -1,5 +1,7 @@
 # Quartz2D
 
+Important note: **The context start point is always (0, 0)**
+
 ## 1. Base draw Line (Base theory using context)
 
 ```swift
@@ -148,3 +150,73 @@ Note:
 - We should use `UIGraphicsBeginImageContextWithOptions()` and `UIGraphicsEndImageContext()` to begin and end the context.
 - When we add text, **we must use NSString**.
 - We can only re-draw a new image, not image view.
+
+## 9. clip an image from image
+
+```swift
+func circleImage(withBorderWidth borderWidth: CGFloat = 0, andBorderColor borderColor: UIColor = UIColor.clear) -> UIImage? {
+    let ctxSize = CGSize(width: self.size.width + 2 * borderWidth, height: self.size.height + 2 * borderWidth)
+    UIGraphicsBeginImageContextWithOptions(ctxSize, false, 0)
+
+    let path = UIBezierPath(ovalIn: CGRect(x: 0, y: 0, width: ctxSize.width, height: ctxSize.height))
+    borderColor.set()
+    path.fill()
+
+    let clipPath = UIBezierPath(ovalIn: CGRect(x: borderWidth, y: borderWidth, width: self.size.width, height: self.size.height))
+    clipPath.addClip()
+    self.draw(at: CGPoint(x: borderWidth, y: borderWidth))
+
+    let circleImage = UIGraphicsGetImageFromCurrentImageContext()
+    UIGraphicsEndImageContext()
+
+    return circleImage
+}
+```
+
+Note:
+
+- `clipPath.addClip()` will set up a new **clip area**. For the following drawing, only the part that in this area will shows, the ourside part will be cutted.
+
+## 10. clip image from a view
+
+```swift
+UIGraphicsBeginImageContextWithOptions(self.imageView.bounds.size, false, 0)
+
+let clipPath = UIBezierPath(rect: (self.coverView?.frame)!)
+clipPath.addClip()
+
+self.imageView.layer.render(in: UIGraphicsGetCurrentContext()!)
+
+let image = UIGraphicsGetImageFromCurrentImageContext()
+UIGraphicsEndImageContext()
+
+self.imageView.image = image
+```
+
+Note:
+
+- If we want to clip an image from a view, we **must use layer** to get. `self.imageView.layer.render(in: UIGraphicsGetCurrentContext()!)`
+
+## 11. clear small part of an image
+
+```swift
+@objc
+private func pan(panGesture: UIPanGestureRecognizer) {
+    let curPoint = panGesture.location(in: self.imageView)
+
+    let clearRectWH: CGFloat = 30
+    let clearRect = CGRect(x: curPoint.x - clearRectWH * 0.5, y: curPoint.y - clearRectWH * 0.5, width: clearRectWH, height: clearRectWH)
+
+    UIGraphicsBeginImageContextWithOptions(self.imageView.bounds.size, false, 0)
+    let ctx = UIGraphicsGetCurrentContext()
+    self.imageView.layer.render(in: ctx!)
+
+    ctx?.clear(clearRect)
+    self.imageView.image = UIGraphicsGetImageFromCurrentImageContext()
+    UIGraphicsEndImageContext()
+}
+```
+
+Note:
+
+- `ctx?.clear(clearRect)` is the function that we can use to clear a rect area.
