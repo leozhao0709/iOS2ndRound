@@ -91,9 +91,10 @@ private func addPanGesture() {
 
 @objc
 private func pan(panGesture: UIPanGestureRecognizer) {
-    let movedPoint = panGesture.translation(in: self.testView)
-    self.testView.transform = self.testView.transform.translatedBy(x: movedPoint.x, y: movedPoint.y)
-    panGesture.setTranslation(CGPoint.zero, in: self.testView)
+    let transPosition = panGesture.translation(in: panGesture.view)
+    imageView?.transform = (imageView?.transform.translatedBy(x: transPosition.x, y: transPosition.y))!
+
+    panGesture.setTranslation(CGPoint.zero, in: panGesture.view)
 }
 ```
 
@@ -109,8 +110,7 @@ private func addPinchGesture() {
 
 @objc
 private func pinch(pinchGesture: UIPinchGestureRecognizer) {
-    let scale = pinchGesture.scale
-    self.testView.transform = self.testView.transform.scaledBy(x: scale, y: scale)
+    pinchGesture.view?.transform = (pinchGesture.view?.transform.scaledBy(x: pinchGesture.scale, y: pinchGesture.scale))!
     pinchGesture.scale = 1
 }
 ```
@@ -127,10 +127,8 @@ private func addRotateGesture() {
 
 @objc
 private func rotate(rotationGesture: UIRotationGestureRecognizer) {
-    let rotateDegree = rotationGesture.rotation
-    self.testView.transform = self.testView.transform.rotated(by: rotateDegree)
-
-    rotationGesture.rotation = 0
+    rotateGesture.view?.transform = (rotateGesture.view?.transform.rotated(by: rotateGesture.rotation))!
+    rotateGesture.rotation = 0
 }
 ```
 

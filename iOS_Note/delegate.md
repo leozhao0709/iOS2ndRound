@@ -3,7 +3,7 @@
 ## 1. create protocol
 
 ```swift
-protocol MyTableViewCellProtocol: NSObjectProtocol {
+protocol MyTableViewCellDelegate: NSObjectProtocol {
     func myTableViewCell(cell: MyTableViewCell, plusBtnClick plusBtn: UIButton)
     func myTableViewCell(cell: MyTableViewCell, minusBtnClick minusBtn: UIButton)
 }
