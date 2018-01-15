@@ -20,7 +20,27 @@ class ViewController: UIViewController, CAAnimationDelegate {
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
 //        self.setViewAnimation()
 //        self.setCAAnimation()
-        self.setKeyFrameAnimation()
+//        self.setKeyFrameAnimation()
+        self.setGroupAnimation()
+    }
+    
+    private func setGroupAnimation() {
+        let animationGroup = CAAnimationGroup()
+        
+        let animation1 = CAKeyframeAnimation()
+        animation1.keyPath = "position"
+        let path = UIBezierPath(ovalIn: CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.width))
+        animation1.path = path.cgPath
+        
+        let animation2 = CABasicAnimation()
+        animation2.keyPath = "transform.scale"
+        animation2.toValue = 0.5
+        
+        animationGroup.animations = [animation1, animation2]
+        animationGroup.duration = 3
+        animationGroup.timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseInEaseOut)
+        
+        self.animatedView.layer.add(animationGroup, forKey: nil)
     }
     
     private func setKeyFrameAnimation() {
