@@ -28,6 +28,7 @@ class ViewController: UIViewController {
         
         let image = #imageLiteral(resourceName: "阿狸头像").circleImage(withBorderWidth: 10, andBorderColor: UIColor.orange)
         self.imageView.image = image
+
     }
 
 

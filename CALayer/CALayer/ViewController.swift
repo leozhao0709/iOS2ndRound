@@ -21,12 +21,15 @@ class ViewController: UIViewController {
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        print(self.imageView.frame)
         self.imageView.layer.cornerRadius = 10
         
         self.imageView.layer.borderColor = UIColor.green.cgColor
         self.imageView.layer.borderWidth = 2
         
         self.imageView.layer.masksToBounds = true
+        self.imageView.backgroundColor = UIColor.red
+        print(self.imageView.frame)
     }
     
     private func redViewLayer() {
