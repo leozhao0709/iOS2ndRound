@@ -1,7 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" systemVersion="17A277" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -9,11 +13,42 @@
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="转盘" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zvS-aE-e7z">
+                                <rect key="frame" x="245" y="90" width="40" height="40"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="19"/>
+                                <state key="normal" title="stop"/>
+                                <connections>
+                                    <action selector="stopRotate:" destination="BYZ-38-t0r" eventType="touchUpInside" id="go7-8s-XS8"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PFJ-Xk-eyF">
+                                <rect key="frame" x="90" y="90" width="40" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="01I-yY-rRf"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="19"/>
+                                <state key="normal" title="start"/>
+                                <connections>
+                                    <action selector="startRotate:" destination="BYZ-38-t0r" eventType="touchUpInside" id="XD1-Y0-p6o"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="PFJ-Xk-eyF" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="90" id="3PB-ub-NH6"/>
+                            <constraint firstItem="PFJ-Xk-eyF" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="70" id="FRe-zt-9bH"/>
+                            <constraint firstItem="zvS-aE-e7z" firstAttribute="height" secondItem="PFJ-Xk-eyF" secondAttribute="height" id="IO0-YG-VGS"/>
+                            <constraint firstItem="zvS-aE-e7z" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="20" symbolic="YES" id="KJD-mt-eBC"/>
+                            <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="PFJ-Xk-eyF" secondAttribute="trailing" constant="20" symbolic="YES" id="PLV-Aw-0Rc"/>
+                            <constraint firstItem="zvS-aE-e7z" firstAttribute="centerY" secondItem="PFJ-Xk-eyF" secondAttribute="centerY" id="dCz-92-wYO"/>
+                            <constraint firstItem="zvS-aE-e7z" firstAttribute="width" secondItem="PFJ-Xk-eyF" secondAttribute="width" id="xla-I8-Qpn"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="zvS-aE-e7z" secondAttribute="trailing" constant="90" id="z5X-oN-46U"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                 </viewController>

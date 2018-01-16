@@ -35,3 +35,18 @@ self.contentEdgeInsets = UIEdgeInsetsMake()
 self.imageEdgeInsets = UIEdgeInsetsMake()
 self.titleEdgeInsets = UIEdgeInsetsMake()
 ```
+
+## 3. cancel highlighted state
+
+```swift
+override var isHighlighted: Bool {
+    set {
+
+    }
+    get {
+        return false
+    }
+}
+```
+
+We need to use this `isHighlighted` to cancel the highlighted state. And **we must rewrite both get and set function for this property**.

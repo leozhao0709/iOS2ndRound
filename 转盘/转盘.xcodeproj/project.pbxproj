@@ -12,6 +12,10 @@
 		D4828C03200C8E6E0084449C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D4828C01200C8E6E0084449C /* Main.storyboard */; };
 		D4828C05200C8E6E0084449C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D4828C04200C8E6E0084449C /* Assets.xcassets */; };
 		D4828C08200C8E6E0084449C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D4828C06200C8E6E0084449C /* LaunchScreen.storyboard */; };
+		D4828C10200D30AA0084449C /* WheelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4828C0F200D30AA0084449C /* WheelView.swift */; };
+		D4828C12200D30BC0084449C /* WheelView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D4828C11200D30BC0084449C /* WheelView.xib */; };
+		D4828C18200D7B310084449C /* WheelButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4828C17200D7B310084449C /* WheelButton.swift */; };
+		D4828C21200D8F7F0084449C /* UIImageExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4828C20200D8F7F0084449C /* UIImageExtension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +26,10 @@
 		D4828C04200C8E6E0084449C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D4828C07200C8E6E0084449C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D4828C09200C8E6E0084449C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D4828C0F200D30AA0084449C /* WheelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WheelView.swift; sourceTree = "<group>"; };
+		D4828C11200D30BC0084449C /* WheelView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WheelView.xib; sourceTree = "<group>"; };
+		D4828C17200D7B310084449C /* WheelButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WheelButton.swift; sourceTree = "<group>"; };
+		D4828C20200D8F7F0084449C /* UIImageExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIImageExtension.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +64,10 @@
 			children = (
 				D4828BFD200C8E6E0084449C /* AppDelegate.swift */,
 				D4828BFF200C8E6E0084449C /* ViewController.swift */,
+				D4828C0F200D30AA0084449C /* WheelView.swift */,
+				D4828C17200D7B310084449C /* WheelButton.swift */,
+				D4828C20200D8F7F0084449C /* UIImageExtension.swift */,
+				D4828C11200D30BC0084449C /* WheelView.xib */,
 				D4828C01200C8E6E0084449C /* Main.storyboard */,
 				D4828C04200C8E6E0084449C /* Assets.xcassets */,
 				D4828C06200C8E6E0084449C /* LaunchScreen.storyboard */,
@@ -125,6 +137,7 @@
 			files = (
 				D4828C08200C8E6E0084449C /* LaunchScreen.storyboard in Resources */,
 				D4828C05200C8E6E0084449C /* Assets.xcassets in Resources */,
+				D4828C12200D30BC0084449C /* WheelView.xib in Resources */,
 				D4828C03200C8E6E0084449C /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -136,8 +149,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D4828C10200D30AA0084449C /* WheelView.swift in Sources */,
 				D4828C00200C8E6E0084449C /* ViewController.swift in Sources */,
 				D4828BFE200C8E6E0084449C /* AppDelegate.swift in Sources */,
+				D4828C21200D8F7F0084449C /* UIImageExtension.swift in Sources */,
+				D4828C18200D7B310084449C /* WheelButton.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

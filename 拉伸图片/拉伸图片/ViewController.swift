@@ -19,7 +19,7 @@ class ViewController: UIViewController {
         let image = #imageLiteral(resourceName: "chat_send_nor")
         
 //        let resizeImage = image.stretchableImage(withLeftCapWidth: Int(image.size.width*0.5), topCapHeight: Int(image.size.height*0.5))
-        let resizeImage = image.strechImage(image: image)
+        let resizeImage = image.strechImage()
         self.imageView.image = resizeImage
     }
 

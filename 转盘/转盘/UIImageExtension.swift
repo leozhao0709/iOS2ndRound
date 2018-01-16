@@ -13,7 +13,7 @@ extension UIImage {
     /// strech an image from its middle part
     ///
     /// - Returns: the streched image
-    func strechImage() -> UIImage? {
+    func strechedImage() -> UIImage? {
         let resizeImage = self.stretchableImage(withLeftCapWidth: Int(self.size.width*0.5), topCapHeight: Int(self.size.height*0.5))
         
         return resizeImage
@@ -30,12 +30,10 @@ extension UIImage {
         let clipY = clipRect.origin.y * scale
         let clipWidth = clipRect.width * scale
         let clipHeight = clipRect.height * scale
-        print(clipRect)
-        print(self)
         let clipImage = self.cgImage?.cropping(to: CGRect(x: clipX, y: clipY, width: clipWidth, height: clipHeight))
         
         guard clipImage != nil else {
-            fatalError("2x or 3x Scaled image may be nil!!!")
+            fatalError("2x or 3x Scaled image may be nil!!! Please check Assets Image source!!!")
         }
         
         return UIImage(cgImage: clipImage!)

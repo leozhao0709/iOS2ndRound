@@ -9,17 +9,25 @@
 import UIKit
 
 class ViewController: UIViewController {
-
+    
+    weak var wheelView: WheelView?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        
+        let wheelView = WheelView.loadWheelView()
+        wheelView.center = self.view.center
+        self.view.addSubview(wheelView)
+        self.wheelView = wheelView
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    @IBAction func startRotate(_ sender: UIButton) {
+        self.wheelView?.startRotate()
     }
-
-
+    
+    @IBAction func stopRotate(_ sender: UIButton) {
+        self.wheelView?.pauseRotate()
+    }
+    
 }
 

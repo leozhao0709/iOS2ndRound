@@ -12,7 +12,7 @@
 		D418EB371FEA0F9D00378104 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D418EB351FEA0F9D00378104 /* Main.storyboard */; };
 		D418EB391FEA0F9D00378104 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D418EB381FEA0F9D00378104 /* Assets.xcassets */; };
 		D418EB3C1FEA0F9D00378104 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D418EB3A1FEA0F9D00378104 /* LaunchScreen.storyboard */; };
-		D418EB461FEA186100378104 /* UIImageExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D418EB451FEA186100378104 /* UIImageExtension.swift */; };
+		D4828C1C200D8DD60084449C /* UIImageExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4828C1B200D8DD60084449C /* UIImageExtension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -23,7 +23,7 @@
 		D418EB381FEA0F9D00378104 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D418EB3B1FEA0F9D00378104 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D418EB3D1FEA0F9D00378104 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		D418EB451FEA186100378104 /* UIImageExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageExtension.swift; sourceTree = "<group>"; };
+		D4828C1B200D8DD60084449C /* UIImageExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIImageExtension.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,11 +58,11 @@
 			children = (
 				D418EB311FEA0F9D00378104 /* AppDelegate.swift */,
 				D418EB331FEA0F9D00378104 /* ViewController.swift */,
+				D4828C1B200D8DD60084449C /* UIImageExtension.swift */,
 				D418EB351FEA0F9D00378104 /* Main.storyboard */,
 				D418EB381FEA0F9D00378104 /* Assets.xcassets */,
 				D418EB3A1FEA0F9D00378104 /* LaunchScreen.storyboard */,
 				D418EB3D1FEA0F9D00378104 /* Info.plist */,
-				D418EB451FEA186100378104 /* UIImageExtension.swift */,
 			);
 			path = "拉伸图片";
 			sourceTree = "<group>";
@@ -141,7 +141,7 @@
 			files = (
 				D418EB341FEA0F9D00378104 /* ViewController.swift in Sources */,
 				D418EB321FEA0F9D00378104 /* AppDelegate.swift in Sources */,
-				D418EB461FEA186100378104 /* UIImageExtension.swift in Sources */,
+				D4828C1C200D8DD60084449C /* UIImageExtension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

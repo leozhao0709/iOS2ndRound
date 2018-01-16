@@ -60,3 +60,5 @@ Note:
 * **We need to remove the displayLink from main loop when we don't need it.**
 
 * CADisplayLink refresh time is same with the frame number of Device(same with view `setNeedsDisplay()` function). So **we always use CADisplayLink for quick task. But if we need to call a task at a specific time, we need to use Timer instead**.
+
+* For a CADisplayLink, we can use `self.displayLink?.isPaused = true` to pasue the CADisplayLink.
