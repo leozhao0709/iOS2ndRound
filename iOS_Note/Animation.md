@@ -195,6 +195,8 @@ Note:
 
 - We can also set up `animation.startProgress` and `animation.endProgress`. The value for this properties are [0, 1]. It can set the start position and end position of animation.
 
+- CATransitionAnimation is relative to its parent view. So sometimes, we can add an addition parent view to change the animation position.
+
 ## 6. CAAnimationGroup
 
 ```swift
