@@ -75,7 +75,7 @@ func animationDidStop(_ anim: CAAnimation, finished flag: Bool) {
 
 Note:
 
-- We can set `keyPath` and `toValue` or `byValue` to set the animation.
+- We can set `keyPath` and `fromValue`, `toValue` or `byValue` to set the animation.
 
 - If we want to keep the last state of animation, we need to set `isRemovedOnCompletion` and `fillMode`.
 
@@ -125,7 +125,7 @@ Note:
 
 - KeyFrame animation can have a set of value change. `animation.values = [value1, value2, value3, value4, value1]`
 
-- keyFrame animation can also set `animation.path` using UIBezierPath. Then animation will animated along with the path. **If both values and path were set, then only path will take effect. Path has high priority.**
+- keyFrame animation can also set `animation.path` using UIBezierPath. Then animation will animated along with the path. **If both values and path were set, then only path will take effect. Path has high priority.** No matter which one we want to use, we must set `animation.keyPath`.
 
 - If we want to keep the last state of animation, we need to set `isRemovedOnCompletion` and `fillMode`.
 
@@ -194,3 +194,32 @@ Note:
   - `180ccw`  顺时针旋转 180°
 
 - We can also set up `animation.startProgress` and `animation.endProgress`. The value for this properties are [0, 1]. It can set the start position and end position of animation.
+
+## 6. CAAnimationGroup
+
+```swift
+private func setGroupAnimation() {
+    let animationGroup = CAAnimationGroup()
+
+    let animation1 = CAKeyframeAnimation()
+    animation1.keyPath = "position"
+    let path = UIBezierPath(ovalIn: CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.width))
+    animation1.path = path.cgPath
+
+    let animation2 = CABasicAnimation()
+    animation2.keyPath = "transform.scale"
+    animation2.toValue = 0.5
+
+    animationGroup.animations = [animation1, animation2]
+    animationGroup.duration = 3
+    animationGroup.timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseInEaseOut)
+
+    self.animatedView.layer.add(animationGroup, forKey: nil)
+}
+```
+
+Note:
+
+- In CAAnimationGroup, we can add **both** `CABasicAnimation` and `CAKeyFrameAnimation`.
+
+- We can set the value like `isRemovedOnCompletion`, `fillMode`, `repeatCount` or `timingFunction` property to animation group.
