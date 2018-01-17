@@ -9,9 +9,7 @@
 import UIKit
 
 class MyView: UIView {
-    
     override class var layerClass: AnyClass {
         return CAReplicatorLayer.self
     }
-    
 }

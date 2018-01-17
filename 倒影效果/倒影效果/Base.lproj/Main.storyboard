@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="倒影效果" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="卡哇伊" translatesAutoresizingMaskIntoConstraints="NO" id="xkP-sC-w2B">
+                                <rect key="frame" x="77" y="116" width="220" height="220"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="220" id="HeJ-Wq-xqq"/>
+                                    <constraint firstAttribute="width" constant="220" id="UGB-e8-WXQ"/>
+                                </constraints>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="卡哇伊" translatesAutoresizingMaskIntoConstraints="NO" id="1O5-Ne-eNQ">
+                                <rect key="frame" x="77" y="336" width="220" height="220"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="1O5-Ne-eNQ" firstAttribute="width" secondItem="xkP-sC-w2B" secondAttribute="width" id="At0-1N-der"/>
+                            <constraint firstItem="1O5-Ne-eNQ" firstAttribute="centerX" secondItem="xkP-sC-w2B" secondAttribute="centerX" id="NW5-An-LB2"/>
+                            <constraint firstItem="xkP-sC-w2B" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="96" id="Ob6-GX-lH0"/>
+                            <constraint firstItem="1O5-Ne-eNQ" firstAttribute="height" secondItem="xkP-sC-w2B" secondAttribute="height" id="Xcb-AG-FKB"/>
+                            <constraint firstItem="xkP-sC-w2B" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="ich-Qn-fgb"/>
+                            <constraint firstItem="1O5-Ne-eNQ" firstAttribute="top" secondItem="xkP-sC-w2B" secondAttribute="bottom" id="snk-Gx-5Ek"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                    <connections>
+                        <outlet property="bottomImageView" destination="1O5-Ne-eNQ" id="2eF-Wn-rQf"/>
+                        <outlet property="topImageView" destination="xkP-sC-w2B" id="SjX-ri-bpl"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="卡哇伊" width="220" height="220"/>
+    </resources>
+</document>

@@ -98,7 +98,8 @@ private func pan(panGesture: UIPanGestureRecognizer) {
 Note:
 
 - We can create an empty layer transform using `CATransform3DIdentity`, this property has several values. `transform.m34 = -1/300` is used to simulate 近大远小.
-- `CATransform3DRotate` is used to simulate 3d rotate. The x,y,z in this function are indicate the rotate axis. The range are also [0, 1].
+
+- `CATransform3DRotate` is used to simulate 3d rotate. The x,y,z in this function are indicate the rotate axis. The range are also [0, 1]. Default Rotate is clockwise direction.
 
 ## 7. gradient layer
 
@@ -123,3 +124,47 @@ Note:
 - We must set layer frame to show layer.
 
 - layer had opacity value, the range is also [0, 1].
+
+## 8. CAReplicatorLayer
+
+This `CAReplicatorLayer` can 复制粘贴此layer上的其他layer,然后我们可以根据transform属性来平移复制粘贴的结果.
+
+```swift
+class MyView: UIView {
+    override class var layerClass: AnyClass {
+        return CAReplicatorLayer.self
+    }
+}
+
+class ViewController: UIViewController {
+    @IBOutlet weak var myView: MyView!
+    override func viewDidLoad() {
+        super.viewDidLoad()
+
+        let layer = CALayer()
+        layer.bounds = CGRect(x: 0, y: 0, width: 30, height: 100)
+        layer.anchorPoint = CGPoint(x: 0, y: 1)
+        layer.position = CGPoint(x: 10, y: self.myView.bounds.height)
+        layer.backgroundColor = UIColor.red.cgColor
+
+        self.myView.layer.addSublayer(layer)
+
+        let repliLayer = self.myView.layer as! CAReplicatorLayer
+        repliLayer.instanceCount = 5
+        repliLayer.instanceTransform = CATransform3DMakeTranslation(45, 0, 0)
+        repliLayer.instanceDelay = 0.1
+    }
+}
+```
+
+This example will give this result:
+
+![CAReplicatorLayer](images/CALayer/CAReplicatorLayer.png)
+
+Note:
+
+- In this example, we want the MyView to become a `CAReplicatorLayer`, so we must rewrite `override class var layerClass: AnyClass` to make MyView layer to a `CAReplicatorLayer`.
+
+- This `CAReplicatorLayer` can 复制粘贴此layer上的**其他layer**, **the original layer won't be copy paste.**
+
+- `repliLayer.instanceTransform` and `repliLayer.instanceDelay` are **based on its last paste object**.

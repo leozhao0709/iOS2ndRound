@@ -66,6 +66,7 @@ private func setCAAnimation() {
     animation.duration = 0.5
     animation.isRemovedOnCompletion = false
     animation.fillMode = kCAFillModeForwards
+    animation.autoreverses = true
     animation.delegate = self
 
     self.animatedView.layer.anchorPoint = CGPoint(x: 0, y: 0)
@@ -93,6 +94,8 @@ Note:
 - CAAnimation can only add to layer.
 
 - We can use `animation.repeatCount` to set animation repeat count.
+
+- We can use `animation.autoreverses` to set a round trip animation.
 
 - We can also use `animation.timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseInEaseOut)` to set the timing function. There are 5 timing function:
   - `kCAMediaTimingFunctionLinear`
