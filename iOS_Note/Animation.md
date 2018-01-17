@@ -1,6 +1,15 @@
-# CAAnimation
+# Animation
 
-## 1. Difference for CAAnimation and UIView Animation
+## 1. UIView Animation
+
+```swift
+//usingSpringWithDamping越小, 弹性系数越大
+UIView.animate(withDuration: 0.5, delay: 0, usingSpringWithDamping: 0.3, initialSpringVelocity: 0, options: .curveEaseInOut, animations: {
+    self.topImage.layer.transform = CATransform3DIdentity
+}, completion: nil)
+```
+
+## 2. Difference for CAAnimation and UIView Animation
 
 - **CAAnimation can only apllied on CALayer**.
 - CALayer anchor point is (0.5, 0.5), so default CAAnimiation is based on its center point.
@@ -9,7 +18,7 @@
 - 当需要用户交互时, **不能使用**CAAnimation.
 - 当需要转场动画时, **可以使用**CATransitionAnimation.
 
-## 2. CAAnimation Key Path
+## 3. CAAnimation Key Path
 
 ```swift
 transform.scale // just need a CGFloat value
@@ -47,7 +56,7 @@ shadowOpacity
 shadowRadius
 ```
 
-## 3. CABasic Animation
+## 4. CABasic Animation
 
 ```swift
 private func setCAAnimation() {
@@ -92,7 +101,7 @@ Note:
   - `kCAMediaTimingFunctionEaseInEaseOut`
   - `kCAMediaTimingFunctionDefault`
 
-## 4. CAKeyframe animation
+## 5. CAKeyframe animation
 
 ```swift
 private func setKeyFrameAnimation() {
@@ -138,7 +147,7 @@ Note:
   - `kCAMediaTimingFunctionEaseInEaseOut`
   - `kCAMediaTimingFunctionDefault`
 
-## 5. CATransition
+## 6. CATransition
 
 ```swift
 private func animation() {
@@ -197,7 +206,7 @@ Note:
 
 - CATransitionAnimation is relative to its parent view. So sometimes, we can add an addition parent view to change the animation position.
 
-## 6. CAAnimationGroup
+## 7. CAAnimationGroup
 
 ```swift
 private func setGroupAnimation() {
