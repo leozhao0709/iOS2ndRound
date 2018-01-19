@@ -12,8 +12,10 @@ class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        self.syncSearial()
+    }
+    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        self.dispatchGroup()
     }
     
     private func asyncConcurrent() {
@@ -76,6 +78,60 @@ class ViewController: UIViewController {
         DispatchQueue.main.asyncAfter(deadline: .now()+1) {
             print("1s late.......\(Thread.current)")
         }
+    }
+    
+    private func barrier() {
+        print("start-------")
+        let queue = DispatchQueue(label: "concurrentQ", attributes: .concurrent)
+        queue.async {
+            for i in 0..<100 {
+                print("\(i)-------\(Thread.current)")
+            }
+        }
+        queue.async {
+            for i in 0..<100 {
+                print("\(i)-------\(Thread.current)")
+            }
+        }
+        queue.async(flags: .barrier) {
+            print("+++++++++++++++++++++")
+        }
+        queue.async {
+            for i in 0..<100 {
+                print("\(i)-------\(Thread.current)")
+            }
+        }
+        queue.async {
+            for i in 0..<100 {
+                print("\(i)-------\(Thread.current)")
+            }
+        }
+        print("end--------")
+    }
+    
+    private func concurrentPerform() {
+        DispatchQueue.concurrentPerform(iterations: 10) { (i) in
+            print("\(i)-----\(Thread.current)")
+        }
+    }
+    
+    private func dispatchGroup() {
+        print("------start")
+        let group = DispatchGroup()
+        DispatchQueue.global().async(group: group) {
+            print("1-------\(Thread.current)")
+        }
+        DispatchQueue.global().async(group: group) {
+            print("2-------\(Thread.current)")
+        }
+        DispatchQueue.global().async(group: group) {
+            print("3-------\(Thread.current)")
+        }
+        group.notify(queue: DispatchQueue.global()) {
+            print("-----group notify----")
+        }
+        group.wait()
+        print("-------end")
     }
 }
 

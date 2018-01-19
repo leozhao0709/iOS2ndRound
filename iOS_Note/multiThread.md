@@ -48,7 +48,7 @@ Note:
 
 - We can use `self.performSelector(onMainThread: #selector(self.setTicketsCountLabel(object:)), with: self, waitUntilDone: true)` to go back to main thread. But note, looks like the `with:` parameter **can only pass Object**, directly **pass an int will not work**.
 
-## 2. GCD
+## 2. GCD basic combination
 
 ```swift
 private func asyncConcurrent() {
@@ -142,7 +142,9 @@ Note:
 
 - `async` and `concurrency` will create some new thread and a concurrency queue to run task. So the task running may not according to its order.
 
-- `MainQueue` is a a serial queue. And when you are using MainQueue, the async will **not** work. It will still go as sync.
+- `MainQueue` is a serial queue. And when you are using MainQueue, the async will **not** work. It will still go as sync.
+
+- `DispatchQueue.global()` is a default concurrent queue.
 
 - **Searial MainQueue called by Main queue will give a dead lock, so your app will be stuck**.
 
@@ -153,3 +155,95 @@ Note:
 - We can use `DispatchQueue.main.asyncAfter` to do a delay running.
 
 - `Dispatch once` is no longer work in swift. Use `lazy` instead.
+
+## 3. Barrier async
+
+```swift
+private func barrier() {
+    print("start-------")
+    let queue = DispatchQueue(label: "concurrentQ", attributes: .concurrent)
+    queue.async {
+        for i in 0..<100 {
+            print("\(i)-------\(Thread.current)")
+        }
+    }
+    queue.async {
+        for i in 0..<100 {
+            print("\(i)-------\(Thread.current)")
+        }
+    }
+    queue.async(flags: .barrier) {
+        print("+++++++++++++++++++++")
+    }
+    queue.async {
+        for i in 0..<100 {
+            print("\(i)-------\(Thread.current)")
+        }
+    }
+    queue.async {
+        for i in 0..<100 {
+            print("\(i)-------\(Thread.current)")
+        }
+    }
+    print("end--------")
+}
+```
+
+Note:
+
+- Barrier is used to divide the async thread. In the example above, the top 2 thread will run first, then the bottom 2 thread will start running.
+
+- Barrier **cannot** work on `DispatchQueue.global()`, so we must create a concurrent queue.
+
+## 4. Concurrent perform
+
+```swift
+private func concurrentPerform() {
+    DispatchQueue.concurrentPerform(iterations: 10) { (i) in
+        print("\(i)-----\(Thread.current)")
+    }
+}
+```
+
+Result:
+
+![concurrentPerform](images/gcd/concurrentPerform.png)
+
+Note:
+
+- This Concurrent perform is an async process, it will create different thread to run task. This will increase the performance.
+
+## 5. Dispatch group
+
+```swift
+private func dispatchGroup() {
+    print("------start")
+    let group = DispatchGroup()
+    DispatchQueue.global().async(group: group) {
+        print("1-------\(Thread.current)")
+    }
+    DispatchQueue.global().async(group: group) {
+        print("2-------\(Thread.current)")
+    }
+    DispatchQueue.global().async(group: group) {
+        print("3-------\(Thread.current)")
+    }
+    group.notify(queue: DispatchQueue.global()) {
+        print("-----group notify----")
+    }
+    group.wait()
+    print("-------end")
+}
+```
+
+Result:
+
+![dispatch group](images/gcd/dispatchGroup.png)
+
+Note:
+
+- In async dispatch group, it's still async.
+
+- We can use `group.notify` to trigger a task that need run after all the async task in the group.
+
+- We can use `group.wait()` to block the current thread.
