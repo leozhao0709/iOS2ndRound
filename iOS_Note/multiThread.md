@@ -247,3 +247,53 @@ Note:
 - We can use `group.notify` to trigger a task that need run after all the async task in the group.
 
 - We can use `group.wait()` to block the current thread.
+
+## 6. Operation Queue
+
+In swift, it doesn't support for `NSInvocationOperation`.
+
+1. Block Operation
+
+    ```swift
+    private func blockOperationDemo() {
+        let op1 = BlockOperation {
+            print("---download1-----\(Thread.current)")
+        }
+        let op2 = BlockOperation {
+            print("---download2-----\(Thread.current)")
+        }
+        let op3 = BlockOperation {
+            print("---download3-----\(Thread.current)")
+        }
+
+        let operationQueue = OperationQueue()
+        operationQueue.addOperation(op1)
+        operationQueue.addOperation(op2)
+        operationQueue.addOperation(op3)
+    }
+    ```
+
+    We need to create operation queue to start multi thread process. And when we add `BlockOperation` to operationQueue, we don't need to call operation.start to start the operation.
+
+2. Custom Operation
+
+    ```swift
+    class MyOperation: Operation {
+        override func main() {
+            print("---download...-----\(Thread.current)")
+        }
+    }
+
+    private func myOperationDemo() {
+        let op1 = MyOperation()
+        let op2 = MyOperation()
+        let op3 = MyOperation()
+
+        let operationQueue = OperationQueue()
+        operationQueue.addOperation(op1)
+        operationQueue.addOperation(op2)
+        operationQueue.addOperation(op3)
+    }
+    ```
+
+    When we create custom operation, we need rewrite the `main` function to write task.
