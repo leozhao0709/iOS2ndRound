@@ -11,3 +11,7 @@
 ## 3. Setup file prefix
 
 ![prefix](images/swift/classPrefix.jpg)
+
+## 4. Set up Http Security
+
+We can add `App Transport Security Settings` to info.plist. Then we need to add `Allow Arbitrary Loads` to it to open the Http security.

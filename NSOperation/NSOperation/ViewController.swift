@@ -21,7 +21,8 @@ class ViewController: UIViewController {
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-        self.myOperationDemo()
+//        self.myOperationDemo()
+        self.blockOperationDemo()
     }
     
     private func myOperationDemo() {
@@ -31,6 +32,8 @@ class ViewController: UIViewController {
         
         let operationQueue = OperationQueue()
         operationQueue.maxConcurrentOperationCount = 3
+        
+        
         operationQueue.addOperation(op1)
         operationQueue.addOperation(op2)
         operationQueue.addOperation(op3)
@@ -46,6 +49,9 @@ class ViewController: UIViewController {
         let op3 = BlockOperation {
             print("---download3-----\(Thread.current)")
         }
+        
+        op3.addDependency(op2)
+        op3.addDependency(op1)
 
         let operationQueue = OperationQueue()
         operationQueue.addOperation(op1)

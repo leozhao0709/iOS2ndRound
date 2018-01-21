@@ -275,6 +275,8 @@ In swift, it doesn't support for `NSInvocationOperation`.
 
     We need to create operation queue to start multi thread process. And when we add `BlockOperation` to operationQueue, we don't need to call operation.start to start the operation.
 
+    If we want to use main thread, then please use `OperationQueue.main`.
+
 2. Custom Operation
 
     ```swift
@@ -297,3 +299,28 @@ In swift, it doesn't support for `NSInvocationOperation`.
     ```
 
     When we create custom operation, we need rewrite the `main` function to write task.
+
+3. Operation dependency
+
+    ```swift
+    private func blockOperationDemo() {
+        let op1 = BlockOperation {
+            print("---download1-----\(Thread.current)")
+        }
+        let op2 = BlockOperation {
+            print("---download2-----\(Thread.current)")
+        }
+        let op3 = BlockOperation {
+            print("---download3-----\(Thread.current)")
+        }
+        op3.addDependency(op2)
+        op3.addDependency(op1)
+
+        let operationQueue = OperationQueue()
+        operationQueue.addOperation(op1)
+        operationQueue.addOperation(op2)
+        operationQueue.addOperation(op3)
+    }
+    ```
+
+    We can use `op3.addDependency(op2)` to change the task running order. In the example above, op3 will run after finishing op1 and op2.
