@@ -34,6 +34,8 @@ Note:
 
 * `MainLoop` is really important here. **The timer is added for default Mode if we don't change the mode in Main Loop. In this example, we change mode to commonModes. Default Mode is just add timer to Main thread, but Main thread contains all the UI related things. If user interact with iOS, then main thread will just works for user interact and ignore the timer. So we need change it to common mode here.**
 
+* If timer is **created in another thread**, then we need to get that thread runLoop and then call `runloop.run()` to start a timer.
+
 * Using `Timer`, we can set up the time we want to schedule.
 
 ## 2. CADisplayLink
