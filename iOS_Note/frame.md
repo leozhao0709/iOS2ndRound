@@ -18,3 +18,7 @@ Note:
 - We can use layer `anchorPoint` to redefine the anchorPoint, Note anchorPoint value is in range [0, 1]. The defalut layer anchorPoint is (0.5, 0.5)
 
 - After we setup the anchorPoint, we can use layer `position` property to redefine the position.
+
+## 2. Difference for Frame and Bounds
+
+Frame变化是从左上角向外延伸, bounds的变化是从中心向四周延伸. **如果要用center定位, 先确定center, 然后一定要用bounds.size, 不要用frame.size取确定view的size**

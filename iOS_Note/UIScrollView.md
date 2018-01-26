@@ -126,3 +126,9 @@ func viewForZooming(in scrollView: UIScrollView) -> UIView? {
         self.pageCtrol.currentPage = Int(currentPage)
   }
   ```
+
+## 8. Scroll View jumping bug
+
+If we are using a **navigation Controller** and a scroll view in the same time, then when we scroll the scroll view, the scroll view may automatically jump about 64 size.
+
+This is coming from after iOS 7, if we create app between iOS7 and iOS 10, then we can use `self.automaticallyAdjustsScrollViewInsets = false` in viewController to fix this bug. When starting from **iOS 11**, we should use **UIScrollView's contentInsetAdjustmentBehavior instead**.
