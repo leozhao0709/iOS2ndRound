@@ -38,15 +38,15 @@ private func sellTicket() {
 
 Note:
 
-- We can create a thread using `let threadA = Thread(target: self, selector: #selector(self.sellTicket), object: nil)`, but remember we need call `threadA.start()` to start the thread running.
+*   We can create a thread using `let threadA = Thread(target: self, selector: #selector(self.sellTicket), object: nil)`, but remember we need call `threadA.start()` to start the thread running.
 
-- We can use `threadA.name = "A"` to set a thread name.
+*   We can use `threadA.name = "A"` to set a thread name.
 
-- We can use `objc_sync_enter(self)` and `objc_sync_exit(self)` to do a lock part for the code.
+*   We can use `objc_sync_enter(self)` and `objc_sync_exit(self)` to do a lock part for the code.
 
-- We can also use `Thread.exit()` to exit a thread. But note, this is a class function.
+*   We can also use `Thread.exit()` to exit a thread. But note, this is a class function.
 
-- We can use `self.performSelector(onMainThread: #selector(self.setTicketsCountLabel(object:)), with: self, waitUntilDone: true)` to go back to main thread. But note, looks like the `with:` parameter **can only pass Object**, directly **pass an int will not work**.
+*   We can use `self.performSelector(onMainThread: #selector(self.setTicketsCountLabel(object:)), with: self, waitUntilDone: true)` to go back to main thread. But note, looks like the `with:` parameter **can only pass Object**, directly **pass an int will not work**.
 
 ## 2. GCD basic combination
 
@@ -138,23 +138,23 @@ Result:
 
 Note:
 
-- `async` has the ability to create a new thread. While `sync` doesn't have this ability.
+*   `async` has the ability to create a new thread. While `sync` doesn't have this ability.
 
-- `async` and `concurrency` will create some new thread and a concurrency queue to run task. So the task running may not according to its order.
+*   `async` and `concurrency` will create some new thread and a concurrency queue to run task. So the task running may not according to its order.
 
-- `MainQueue` is a serial queue. And when you are using MainQueue, the async will **not** work. It will still go as sync.
+*   `MainQueue` is a serial queue. And when you are using MainQueue, the async will **not** work. It will still go as sync.
 
-- `DispatchQueue.global()` is a default concurrent queue.
+*   `DispatchQueue.global()` is a default concurrent queue.
 
-- **Searial MainQueue called by Main queue will give a dead lock, so your app will be stuck**.
+*   **Searial MainQueue called by sync will give a dead lock, so your app will be stuck**.
 
-- `async` and `serial` will go as the order. As the serial queue need to run task one by one. But note the original thread will still go. Check example above.
+*   `async` and `serial` will go as the order. As the serial queue need to run task one by one. But note the original thread will still go. Check example above.
 
-- ![gcd总结](images/gcd/gcd总结.png)
+*   ![gcd总结](images/gcd/gcd总结.png)
 
-- We can use `DispatchQueue.main.asyncAfter` to do a delay running.
+*   We can use `DispatchQueue.main.asyncAfter` to do a delay running.
 
-- `Dispatch once` is no longer work in swift. Use `lazy` instead.
+*   `Dispatch once` is no longer work in swift. Use `lazy` instead.
 
 ## 3. Barrier async
 
@@ -191,9 +191,9 @@ private func barrier() {
 
 Note:
 
-- Barrier is used to divide the async thread. In the example above, the top 2 thread will run first, then the bottom 2 thread will start running.
+*   Barrier is used to divide the async thread. In the example above, the top 2 thread will run first, then the bottom 2 thread will start running.
 
-- Barrier **cannot** work on `DispatchQueue.global()`, so we must create a concurrent queue.
+*   Barrier **cannot** work on `DispatchQueue.global()`, so we must create a concurrent queue.
 
 ## 4. Concurrent perform
 
@@ -211,7 +211,7 @@ Result:
 
 Note:
 
-- This Concurrent perform is an async process, it will create different thread to run task. This will increase the performance.
+*   This Concurrent perform is an async process, it will create different thread to run task. This will increase the performance.
 
 ## 5. Dispatch group
 
@@ -242,17 +242,17 @@ Result:
 
 Note:
 
-- In async dispatch group, it's still async.
+*   In async dispatch group, it's still async.
 
-- We can use `group.notify` to trigger a task that need run after all the async task in the group.
+*   We can use `group.notify` to trigger a task that need run after all the async task in the group.
 
-- We can use `group.wait()` to block the current thread.
+*   We can use `group.wait()` to block the current thread.
 
 ## 6. Operation Queue
 
 In swift, it doesn't support for `NSInvocationOperation`.
 
-1. Block Operation
+1.  Block Operation
 
     ```swift
     private func blockOperationDemo() {
@@ -277,7 +277,7 @@ In swift, it doesn't support for `NSInvocationOperation`.
 
     If we want to use main thread, then please use `OperationQueue.main`.
 
-2. Custom Operation
+2.  Custom Operation
 
     ```swift
     class MyOperation: Operation {
@@ -300,7 +300,7 @@ In swift, it doesn't support for `NSInvocationOperation`.
 
     When we create custom operation, we need rewrite the `main` function to write task.
 
-3. Operation dependency
+3.  Operation dependency
 
     ```swift
     private func blockOperationDemo() {
