@@ -159,7 +159,7 @@ class ViewController: UIViewController {
 
 This example will give this result:
 
-![CAReplicatorLayer](images/CALayer/CAReplicatorLayer.png)
+![CAReplicatorLayer](../images/CALayer/CAReplicatorLayer.png)
 
 Note:
 

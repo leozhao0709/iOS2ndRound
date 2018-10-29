@@ -83,7 +83,7 @@ Note:
 - for `UIBezierPath(arcCenter: center, radius: radius, startAngle: 0, endAngle: -CGFloat.pi/2, clockwise: false)`, the clockwise is important here. It will decide the arc direction.
 - The above example will show this:
 
-  ![arc](images/quartz2D//arc.jpg)
+  ![arc](../images/quartz2D//arc.jpg)
 
 ## 5. setNeedsDisplay()
 

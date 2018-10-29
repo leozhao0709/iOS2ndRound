@@ -68,7 +68,7 @@ private func asyncConcurrent() {
 
 Result:
 
-![asyncConcurrent](images/gcd/asyncConcurrent.png)
+![asyncConcurrent](../images/gcd/asyncConcurrent.png)
 
 ```swift
 private func asyncSearial() {
@@ -88,7 +88,7 @@ private func asyncSearial() {
 
 Result:
 
-![asyncMain](images/gcd/asyncMain.png)
+![asyncMain](../images/gcd/asyncMain.png)
 
 ```swift
 private func syncConcurrent() {
@@ -108,7 +108,7 @@ private func syncConcurrent() {
 
 Result:
 
-![syncConcurrent](images/gcd/syncConcurrent.png)
+![syncConcurrent](../images/gcd/syncConcurrent.png)
 
 ```swift
 private func syncSearial() {
@@ -134,7 +134,7 @@ private func syncSearial() {
 
 Result:
 
-![syncSearial](images/gcd/syncSerial.png)
+![syncSearial](../images/gcd/syncSerial.png)
 
 Note:
 
@@ -150,7 +150,7 @@ Note:
 
 *   `async` and `serial` will go as the order. As the serial queue need to run task one by one. But note the original thread will still go. Check example above.
 
-*   ![gcd总结](images/gcd/gcd总结.png)
+*   ![gcd总结](../images/gcd/gcd总结.png)
 
 *   We can use `DispatchQueue.main.asyncAfter` to do a delay running.
 
@@ -207,7 +207,7 @@ private func concurrentPerform() {
 
 Result:
 
-![concurrentPerform](images/gcd/concurrentPerform.png)
+![concurrentPerform](../images/gcd/concurrentPerform.png)
 
 Note:
 
@@ -238,7 +238,7 @@ private func dispatchGroup() {
 
 Result:
 
-![dispatch group](images/gcd/dispatchGroup.png)
+![dispatch group](../images/gcd/dispatchGroup.png)
 
 Note:
 

@@ -4,7 +4,7 @@
 
   we can use `image.resizableImage(withCapInsets: UIEdgeInsetsMake(image.size.height/2, image.size.width/2, image.size.height/2-1, image.size.width/2-1))` to strech an image. Look the following screen shot, the cap part means the part we don't want to strech. We protect half size from top, half size from left, half size minus 1 from bottom and half size minus 1 from right. So we only strech 1px in the middle part.
 
-  ![strechTheroy](images/UIImage/strechTheory.png)
+  ![strechTheroy](../images/UIImage/strechTheory.png)
 
   We can use the following code to strech:
   ```swift
