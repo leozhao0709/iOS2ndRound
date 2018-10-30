@@ -33,6 +33,10 @@
     }
     ```
 
+    Note:
+    -   You must set window in `init`, other part like `loadWindow()` won't work
+    -   Add `contentViewController` when you create NSWindow, then you can set up your contentViewController view size to define the window size.
+
 2. add to AppDelegate
 
     ```swift
