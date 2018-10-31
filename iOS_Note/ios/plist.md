@@ -16,6 +16,15 @@ print(array!)
 print(dict!)
 ```
 
+```swift
+lazy var photos: [String] = {
+    let res = Bundle.main.path(forResource: "photos.plist", ofType: nil)
+    
+    let temp = NSArray(contentsOfFile: res!)
+    return temp as! [String]
+}()
+```
+
 ## 2. write array or dictionary to plist
 
 ```swift

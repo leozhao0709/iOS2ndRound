@@ -16,6 +16,8 @@ class LeftViewController: NSViewController {
     
     override func loadView() {
         self.view = NSView()
+
+        // initial size
         self.view.setFrameSize(NSSize(width: 100, height: 0))
     }
 }
@@ -23,6 +25,7 @@ class LeftViewController: NSViewController {
 
 Note:
 
+-   You need to set up the `self.view` in `loadView()` if you don't use xib. This is not like the `UIViewController`
 -   Please do any size related thing in `override func loadView()`
 -   If you want to define background color, then please use `layer` and you need to set up `self.view.wantsLayer = true`
 
