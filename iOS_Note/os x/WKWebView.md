@@ -37,6 +37,15 @@ class ViewController: NSViewController, WKNavigationDelegate {
         
         return webView
     }
+
+    // delegate
+    func webView(_ webView: WKWebView, didCommit navigation: WKNavigation!) {
+        guard let selectedWebView = self.selectedWebView else { return }
+        
+        if let windowController = self.view.window?.windowController as? WindowController {
+            windowController.addressEntry.stringValue = selectedWebView.url?.absoluteString ?? ""
+        }
+    }
 }
 ```
 
@@ -44,4 +53,5 @@ Note:
 
 -   You need to import `WebKit` and your controller needs to implements protocol `WKNavigationDelegate`
 -   `WKWebView` needs `wantsLayer` to show
--   `webView` needs to load `URLRequest` to load a url
+-   `WKWebView` has the `load` method to load a `URLRequest`
+-   `WKWebView` also has `goBack` and `goForward` method to go back or go forward of your web view

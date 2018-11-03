@@ -9,3 +9,7 @@ label = NSTextField()
 (label as! NSTextField).isBordered = false
 (label as! NSTextField).drawsBackground = false
 ```
+
+Note:
+
+-   You can use `NSTextField.stringValue` to get or set the textField value

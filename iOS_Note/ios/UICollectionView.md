@@ -26,7 +26,7 @@ Note:
 
 - We need **use layout to initial** the UICollectionView.
 - UICollectionView default background Color is **black**.
-- We can s**etup many properties in layout** intead of collectionView itself.
+- We can **setup many properties in layout** intead of collectionView itself.
 
 ## 2. dataSource
 
