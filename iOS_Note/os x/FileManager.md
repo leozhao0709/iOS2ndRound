@@ -1,5 +1,9 @@
 # FileManager
 
+## 0. trick
+
+-   When using fileManager in mac os app, you need close `App Sandbox` in `project.entitlements` file
+
 ## 1. usage
 
 ```swift
